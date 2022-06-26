@@ -8,7 +8,7 @@ const style = {
     title: `text-5xl font-bold text-white`,
     description: `text-[#FFE66D] text-2xl  rounded-xl px-2 py-8 mt-2`,
     ctaContainer: `flex`,
-    mintButton: `text-xl font-bold w-1/3 py-4 bg-[#2292A4] rounded-full text-white mr-5 hover:bg-[#2EC4B6] hover:text-black`,
+    mintButton: `text-xl font-bold w-1/3 py-4 bg-[#00AF54] rounded-full text-white mr-5 hover:bg-[#85FFC7] hover:text-black`,
     openseaButton: `text-xl font-bold w-1/3 py-4 bg-[#576066] rounded-full text-white mr-5 hover:bg-[#7D8491]`,
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,

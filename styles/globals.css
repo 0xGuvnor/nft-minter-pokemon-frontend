@@ -7,8 +7,8 @@ body {
     padding: 0;
     margin: 0;
     background-color: #0f1108;
-    /* font-family: "Oswald", sans-serif; */
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    /* font-family: "Source Sans Pro", sans-serif; */
     /* font-family: "Rubik Moonrocks", cursive; */
 }
 
@@ -20,7 +20,8 @@ h3 {
 }
 
 p {
-    font-family: "Source Sans Pro", sans-serif;
+    /* font-family: "Source Sans Pro", sans-serif; */
+    font-family: "Montserrat", sans-serif;
     /* font-family: "Rubik Moonrocks", cursive; */
 }
 
