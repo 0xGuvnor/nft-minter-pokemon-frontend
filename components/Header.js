@@ -11,7 +11,8 @@ const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
     logoContainer: `flex items-center cursor-pointer gap-1`,
     logoText: `text-3xl font-bold text-white`,
-    navLinks: `flex gap-6 text-2xl items-center text-white`,
+    navLinks: `flex text-2xl items-center text-white`,
+    navLink: `lg:px-8 md:px-4 sm:px-2`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
 };
 
@@ -60,9 +61,9 @@ const Header = ({ title }) => {
                     </div>
                 </Link>
                 <ul className={style.navLinks}>
-                    <li>About</li>
-                    <li>Team</li>
-                    <li>Mint</li>
+                    <li className={style.navLink}>About</li>
+                    <li className={style.navLink}>Team</li>
+                    <li className={style.navLink}>Mint</li>
                 </ul>
                 {address ? deAuth() : Auth()}
             </div>
