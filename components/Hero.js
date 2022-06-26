@@ -10,7 +10,7 @@ const style = {
     ctaContainer: `flex`,
     mintButton: `text-lg font-bold w-1/3 py-4 bg-[#2292A4] rounded-full text-white mr-5 hover:bg-[#2EC4B6] hover:text-black`,
     openseaButton: `text-lg font-bold w-1/3 py-4 bg-[#576066] rounded-full text-white mr-5 hover:bg-[#7D8491]`,
-    iamgeCard: `rounded-t-3xl`,
+    imageCard: `rounded-t-3xl`,
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
     avatar: `h-[2.5rem] rounded-full`,
     authorInfo: `ml-4 flex flex-col`,
@@ -35,7 +35,7 @@ const Hero = () => {
                     </div>
                     <div>
                         <img
-                            className={style.iamgeCard}
+                            className={style.imageCard}
                             src="https://www.pngitem.com/pimgs/m/373-3734017_pokemon-pikachu-hd-png-download.png"
                             height={500}
                             width={500}
