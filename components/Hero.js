@@ -10,6 +10,7 @@ const style = {
     ctaContainer: `flex`,
     mintButton: `text-xl font-bold w-1/3 py-4 bg-[#00AF54] xl:rounded-full sm:rounded-lg text-white mr-5 hover:bg-[#85FFC7] hover:text-black`,
     openseaButton: `text-xl font-bold w-1/3 py-4 bg-[#576066] xl:rounded-full sm:rounded-lg text-white mr-5 hover:bg-[#7D8491]`,
+    cardContainer: `drop-shadow-2xl`,
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
     avatar: `h-[2.5rem] rounded-full`,
@@ -35,7 +36,7 @@ const Hero = () => {
                             <button className={style.openseaButton}>View on OpenSea</button>
                         </div>
                     </div>
-                    <div>
+                    <div className={style.cardContainer}>
                         <img
                             className={style.imageCard}
                             src="https://www.pngitem.com/pimgs/m/373-3734017_pokemon-pikachu-hd-png-download.png"
