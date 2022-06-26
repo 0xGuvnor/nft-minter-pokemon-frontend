@@ -11,7 +11,7 @@ const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
     logoContainer: `flex items-center cursor-pointer gap-1`,
     logoText: `text-3xl font-bold text-white`,
-    navLinks: `flex gap-6 text-xl items-center text-white`,
+    navLinks: `flex gap-6 text-2xl items-center text-white`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
 };
 
@@ -50,12 +50,6 @@ const Header = ({ title }) => {
                 <title>Pokedéx - {title}</title>
                 <meta name="description" content="Mint a Pokemon NFT" />
                 <link rel="icon" href="/pokeball.png" />
-                {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap"
-                    rel="stylesheet"
-                /> */}
             </Head>
 
             <div className={style.wrapper}>
