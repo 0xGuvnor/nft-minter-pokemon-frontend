@@ -14,7 +14,7 @@ const style = {
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
     avatar: `h-[2.5rem] rounded-full`,
     authorInfo: `ml-4 flex flex-col text-md`,
-    author: `text-[#00B4D8]`,
+    author: `text-[#00B4D8] ml-2`,
 };
 
 const Hero = () => {
@@ -49,14 +49,17 @@ const Hero = () => {
                             />
                             <div className={style.authorInfo}>
                                 <div>Pikachu</div>
-                                <a
-                                    className={style.author}
-                                    href="https://www.instagram.com/ashketchum_official/?hl=en"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Ash_Ketchum
-                                </a>
+                                <div>
+                                    by
+                                    <a
+                                        className={style.author}
+                                        href="https://www.instagram.com/ashketchum_official/?hl=en"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Ash_Ketchum
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
