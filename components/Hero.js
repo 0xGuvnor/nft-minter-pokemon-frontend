@@ -23,7 +23,9 @@ const Hero = () => {
             <div className={style.container}>
                 <div className={style.contentWrapper}>
                     <div className={style.copyContainer}>
-                        <h1 className={style.title}>Do you have what it takes to catch 'em all?</h1>
+                        <h1 className={style.title}>
+                            Do you have what it takes to catch &apos;em all?
+                        </h1>
                         <p className={style.description}>
                             Each minted Pokémon NFT is one-of-a-kind. Once minted, it is taken out
                             of the pool of available Pokémon to be chosen from.

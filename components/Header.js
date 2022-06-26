@@ -8,72 +8,72 @@ import Image from "next/image";
 import Link from "next/link";
 
 const style = {
-  wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
-  logoContainer: `flex items-center cursor-pointer gap-1`,
-  logoText: `text-3xl font-bold text-white`,
-  navLinks: `flex gap-6 text-xl items-center text-white`,
-  connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
+    wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
+    logoContainer: `flex items-center cursor-pointer gap-1`,
+    logoText: `text-3xl font-bold text-white`,
+    navLinks: `flex gap-6 text-xl items-center text-white`,
+    connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
 };
 
 const Header = ({ title }) => {
-  const connectWithMetamask = useMetamask();
-  const disconnect = useDisconnect();
-  const address = useAddress();
+    const connectWithMetamask = useMetamask();
+    const disconnect = useDisconnect();
+    const address = useAddress();
 
-  const truncateAddress = (address) => {
-    const front = address.slice(0, 6);
-    const back = address.slice(-4);
-    return `${front}...${back}`;
-  };
+    const truncateAddress = (address) => {
+        const front = address.slice(0, 6);
+        const back = address.slice(-4);
+        return `${front}...${back}`;
+    };
 
-  const Auth = () => {
+    const Auth = () => {
+        return (
+            <button className={style.connectButton} onClick={connectWithMetamask}>
+                <RiWallet2Line />
+                Connect Metamask
+            </button>
+        );
+    };
+
+    const deAuth = () => {
+        return (
+            <button className={style.connectButton} onClick={disconnect}>
+                <FaEthereum />
+                {truncateAddress(address)}
+            </button>
+        );
+    };
+
     return (
-      <button className={style.connectButton} onClick={connectWithMetamask}>
-        <RiWallet2Line />
-        Connect Metamask
-      </button>
+        <div>
+            <Head>
+                <title>Pokedéx - {title}</title>
+                <meta name="description" content="Mint a Pokemon NFT" />
+                <link rel="icon" href="/pokeball.png" />
+                {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap"
+                    rel="stylesheet"
+                /> */}
+            </Head>
+
+            <div className={style.wrapper}>
+                <Link href="/">
+                    <div className={style.logoContainer}>
+                        <Image src={pokedexLogo} height={40} width={40} />
+                        <h1 className={style.logoText}>Pokédex</h1>
+                    </div>
+                </Link>
+                <ul className={style.navLinks}>
+                    <li>About</li>
+                    <li>Team</li>
+                    <li>Mint</li>
+                </ul>
+                {address ? deAuth() : Auth()}
+            </div>
+        </div>
     );
-  };
-
-  const deAuth = () => {
-    return (
-      <button className={style.connectButton} onClick={disconnect}>
-        <FaEthereum />
-        {truncateAddress(address)}
-      </button>
-    );
-  };
-
-  return (
-    <div>
-      <Head>
-        <title>Pokedex - {title}</title>
-        <meta name="description" content="Mint a Pokemon NFT" />
-        <link rel="icon" href="/pokeball.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      <div className={style.wrapper}>
-        <Link href="/">
-          <div className={style.logoContainer}>
-            <Image src={pokedexLogo} height={40} width={40} />
-            <h1 className={style.logoText}>Pokédex</h1>
-          </div>
-        </Link>
-        <ul className={style.navLinks}>
-          <li>About</li>
-          <li>Team</li>
-          <li>Mint</li>
-        </ul>
-        {address ? deAuth() : Auth()}
-      </div>
-    </div>
-  );
 };
 
 export default Header;

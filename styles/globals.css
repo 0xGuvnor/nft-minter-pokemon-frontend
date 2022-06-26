@@ -2,30 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap");
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  background-color: #0f1108;
-  font-family: "Oswald", sans-serif;
-  font-family: "Source Sans Pro", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #0f1108;
+    font-family: "Oswald", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Oswald", sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 p {
-  font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
