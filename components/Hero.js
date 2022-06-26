@@ -3,7 +3,7 @@ import React from "react";
 const style = {
     wrapper: `relative bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
     container: `backdrop-blur-[2px] backdrop-brightness-50`,
-    contentWrapper: `flex h-screen relative justify-center flex-wrap items-center`,
+    contentWrapper: `flex h-screen w-screen relative justify-center flex-wrap items-center`,
     copyContainer: `w-1/2 mr-6`,
     title: `text-5xl font-bold text-white`,
     description: `text-[#FFE66D] text-2xl  rounded-xl px-2 py-8 mt-2`,
