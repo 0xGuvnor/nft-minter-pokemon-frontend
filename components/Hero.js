@@ -48,6 +48,8 @@ const Hero = () => {
                                 <a
                                     className="text-[#00B4D8]"
                                     href="https://www.instagram.com/ashketchum_official/?hl=en"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     Ash_Ketchum
                                 </a>
