@@ -6,6 +6,7 @@ import { useAddress, useMetamask, useDisconnect } from "@thirdweb-dev/react";
 import pokedexLogo from "../assets/pokedex.png";
 import Image from "next/image";
 import Link from "next/link";
+import blockies from "ethereum-blockies";
 
 const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
@@ -14,6 +15,7 @@ const style = {
     navLinks: `flex text-2xl items-center text-white`,
     navLink: `lg:px-8 md:px-4 sm:px-2`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
+    connectedButton: `flex flex-row bg-[#F4B942] items-center rounded-lg text-black`,
 };
 
 const Header = ({ title }) => {
@@ -27,6 +29,8 @@ const Header = ({ title }) => {
         return `${front}...${back}`;
     };
 
+    const blockie = address ? blockies.create({ seed: address }).toDataURL() : undefined;
+
     const Auth = () => {
         return (
             <button className={style.connectButton} onClick={connectWithMetamask}>
@@ -38,10 +42,21 @@ const Header = ({ title }) => {
 
     const deAuth = () => {
         return (
-            <button className={style.connectButton} onClick={disconnect}>
-                <FaEthereum />
-                {truncateAddress(address)}
-            </button>
+            <div className={style.connectedButton}>
+                <div className="flex flex-row items-center rounded-l-lg pl-3 py-1 gap-1">
+                    {20.9999}
+                    <div className="text-xl">
+                        <FaEthereum />
+                    </div>
+                </div>
+                <button
+                    className="bg-[#BA274A] p-2 rounded-lg flex flex-row gap-2 ml-1 text-white"
+                    onClick={disconnect}
+                >
+                    <Image src={blockie} height={20} width={20} />
+                    {truncateAddress(address)}
+                </button>
+            </div>
         );
     };
 
