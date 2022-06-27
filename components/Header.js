@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { RiWallet2Line } from "react-icons/ri";
 import { FaEthereum } from "react-icons/fa";
-import { useAddress, useMetamask, useDisconnect } from "@thirdweb-dev/react";
+import { useAddress, useMetamask, useDisconnect, useBalance } from "@thirdweb-dev/react";
 import pokedexLogo from "../assets/pokedex.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +16,9 @@ const style = {
     navLink: `lg:px-8 md:px-4 sm:px-2`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
     connectedButton: `flex flex-row bg-[#F4B942] items-center rounded-lg text-black`,
+    walletBalance: `flex flex-row justify-center items-center rounded-l-lg pl-3 py-1 gap-1`,
+    ethIcon: `text-xl`,
+    innerButton: `bg-[#BA274A] hover:bg-[#3A506B] p-2 rounded-lg flex flex-row gap-2 ml-1 text-white`,
 };
 
 const Header = ({ title }) => {
@@ -43,16 +46,13 @@ const Header = ({ title }) => {
     const deAuth = () => {
         return (
             <div className={style.connectedButton}>
-                <div className="flex flex-row items-center rounded-l-lg pl-3 py-1 gap-1">
-                    {20.9999}
-                    <div className="text-xl">
+                <div className={style.walletBalance}>
+                    {420.69}
+                    <div className={style.ethIcon}>
                         <FaEthereum />
                     </div>
                 </div>
-                <button
-                    className="bg-[#BA274A] p-2 rounded-lg flex flex-row gap-2 ml-1 text-white"
-                    onClick={disconnect}
-                >
+                <button className={style.innerButton} onClick={disconnect}>
                     <Image src={blockie} height={20} width={20} />
                     {truncateAddress(address)}
                 </button>
@@ -78,7 +78,11 @@ const Header = ({ title }) => {
                 <ul className={style.navLinks}>
                     <li className={style.navLink}>About</li>
                     <li className={style.navLink}>Team</li>
-                    <li className={style.navLink}>Mint</li>
+                    <li className={style.navLink}>
+                        <Link href="/mint">
+                            <a>Mint</a>
+                        </Link>
+                    </li>
                 </ul>
                 {address ? deAuth() : Auth()}
             </div>
