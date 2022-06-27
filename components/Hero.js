@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const style = {
@@ -8,8 +9,8 @@ const style = {
     title: `text-5xl font-bold text-white`,
     description: `text-[#FFE66D] text-2xl  rounded-xl px-2 py-8 mt-2`,
     ctaContainer: `flex`,
-    mintButton: `text-xl font-bold w-1/3 py-4 bg-[#00AF54] xl:rounded-full sm:rounded-lg text-white mr-5 hover:bg-[#85FFC7] hover:text-black`,
-    openseaButton: `text-xl font-bold w-1/3 py-4 bg-[#576066] xl:rounded-full sm:rounded-lg text-white mr-5 hover:bg-[#7D8491]`,
+    mintButton: `text-xl font-bold w-1/3 py-4 bg-[#00AF54] xl:rounded-full sm:rounded-lg text-black mr-5 hover:bg-[#85FFC7] hover:text-black`,
+    openseaButton: `text-xl text-center font-bold w-1/3 py-4 bg-[#576066] xl:rounded-full sm:rounded-lg text-white mr-5 hover:bg-[#7D8491]`,
     cardContainer: `drop-shadow-2xl`,
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
@@ -32,8 +33,18 @@ const Hero = () => {
                             of the pool of available Pokémon to be chosen from.
                         </p>
                         <div className={style.ctaContainer}>
-                            <button className={style.mintButton}>Mint now</button>
-                            <button className={style.openseaButton}>View on OpenSea</button>
+                            <Link href="/mint">
+                                <button className={style.mintButton}>Mint now</button>
+                            </Link>
+                            <Link href="https://testnets.opensea.io/collection/pokedex-wpvsyayuqm">
+                                <a
+                                    className={style.openseaButton}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <button>View on OpenSea</button>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div className={style.cardContainer}>
