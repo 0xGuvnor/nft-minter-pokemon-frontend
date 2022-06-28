@@ -18,17 +18,17 @@ const FAQ = () => {
                 <h1 className={style.title}>FAQ</h1>
                 <div className={style.grid}>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>What's an NFT?</h2>
+                        <h2 className={style.gridTitle}>What&apos;s an NFT?</h2>
                         <p className={style.gridDescription}>
-                            An NFT stands for "non-fungible token", a one of a kind token that
-                            proves ownership of a digital item. Once you own that item, you can then
-                            do lots of other things, like sell it, hold it, show it off, use it to
-                            access a chat room (like Discord) and much more. For some NFT's - the
-                            main function is to simply be visual art and look cool, while some are
-                            audio-based, and others offer additional utility like exclusive access
-                            to websites or participation in an event. In short, it's something
-                            unique, which you alone own. It can be art, and can also act as a
-                            "members" card.
+                            An NFT stands for &quot;non-fungible token&quot;, a one of a kind token
+                            that proves ownership of a digital item. Once you own that item, you can
+                            then do lots of other things, like sell it, hold it, show it off, use it
+                            to access a chat room (like Discord) and much more. For some NFT&apos;s
+                            - the main function is to simply be visual art and look cool, while some
+                            are audio-based, and others offer additional utility like exclusive
+                            access to websites or participation in an event. In short, it&apos;s
+                            something unique, which you alone own. It can be art, and can also act
+                            as a &quot;members&quot; card.
                         </p>
                     </div>
                     <div className={style.gridContainer}>
@@ -38,11 +38,11 @@ const FAQ = () => {
                             media franchise managed by The Pokémon Company, a company founded by
                             Nintendo, Game Freak, and Creatures. The franchise was created by
                             Satoshi Tajiri in 1996, and is centered on fictional creatures called
-                            "Pokémon". In Pokémon, humans, known as Pokémon Trainers, catch and
-                            train Pokémon to battle other Pokémon for sport. All media works within
-                            the franchise are set in the Pokémon universe. The English slogan for
-                            the franchise is "Gotta Catch ‘Em All!". There are currently 913 Pokémon
-                            species.
+                            &quot;Pokémon&quot;. In Pokémon, humans, known as Pokémon Trainers,
+                            catch and train Pokémon to battle other Pokémon for sport. All media
+                            works within the franchise are set in the Pokémon universe. The English
+                            slogan for the franchise is &quot;Gotta Catch ‘Em All!&quot;. There are
+                            currently 913 Pokémon species.
                         </p>
                     </div>
                     <div className={style.gridContainer}>
