@@ -11,7 +11,7 @@ import { BsTwitter } from "react-icons/bs";
 import { SiDiscord } from "react-icons/si";
 
 const style = {
-    wrapper: `mt-4 container w-9/12 md:w-11/12 xl:w-4/6 2xl:w-4/5 mx-auto shrink`,
+    wrapper: `container w-9/12 md:w-11/12 xl:w-4/6 2xl:w-4/5 mx-auto shrink`,
     title: `text-5xl text-center underline mb-4`,
     grid: `grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 2xl:grid-cols-3 lg:grid-rows-2`,
     gridItem: `my-4 flex rounded-full mx-2 justify-start bg-white`,
