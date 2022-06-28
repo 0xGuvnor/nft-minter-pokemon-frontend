@@ -11,7 +11,7 @@ const style = {
     wrapper: `container mx-auto p-8`,
     title: `text-5xl text-center underline mb-8 text-white`,
     imageContainer: `flex flex-row justify-center gap-4`,
-    image: `bg-white rounded-t-3xl p-2 flex flex-col`,
+    image: `bg-white rounded-t-3xl p-2 flex flex-col z-10`,
 };
 
 const About = () => {
@@ -35,7 +35,7 @@ const About = () => {
                     <div className={style.image}>
                         <Image src={Squirtle} width={200} height={200} />
                     </div>
-                    <div className={style.image}>
+                    <div className="-ml-24 z-0">
                         <Image src={Eevee} width={200} height={200} />
                     </div>
                 </div>

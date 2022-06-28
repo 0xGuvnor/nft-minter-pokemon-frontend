@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
                 <div className={style.centerDetails}>
                     <a
-                        className="text-blue-500"
+                        className="text-blue-500 underline"
                         href="https://faucets.chain.link/"
                         target="_blank"
                         rel="noopener noreferrer"

@@ -64,11 +64,11 @@ const FAQ = () => {
                         <p className={style.gridDescription}>
                             Your NFT is securely stored at the address / wallet you used to mint or
                             purchase. You can verify via{" "}
-                            <a href={etherscanUrl} className="text-blue-500">
+                            <a href={etherscanUrl} className="text-blue-500 underline">
                                 Etherscan
                             </a>
                             . You can also view your Pokémon on OpenSea:{" "}
-                            <a href={openseaCollection} className="text-blue-500">
+                            <a href={openseaCollection} className="text-blue-500 underline">
                                 Pokédex Collection
                             </a>
                             .
@@ -78,16 +78,16 @@ const FAQ = () => {
                         <h2 className={style.gridTitle}>How do I get involved?</h2>
                         <p className={style.gridDescription}>
                             Mint a Pokémon yourself, or purchase a Pokémon of your liking on{" "}
-                            <a href={openseaCollection} className="text-blue-500">
+                            <a href={openseaCollection} className="text-blue-500 underline">
                                 OpenSea
                             </a>
                             . Head over to the{" "}
-                            <a href={openseaCollection} className="text-blue-500">
+                            <a href={openseaCollection} className="text-blue-500 underline">
                                 Pokédex Discord
                             </a>
                             , jump in on the conversation and let us know your ideas! In Discord you
                             can verify as a holder to access gated channels. Jump on{" "}
-                            <a href={twitterUrl} className="text-blue-500">
+                            <a href={twitterUrl} className="text-blue-500 underline">
                                 Twitter
                             </a>{" "}
                             and show your support for the project!
