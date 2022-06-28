@@ -10,15 +10,15 @@ import blockies from "ethereum-blockies";
 
 const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
-    logoContainer: `flex items-center cursor-pointer gap-1`,
-    logoText: `text-3xl font-bold text-white`,
-    navLinks: `flex text-2xl items-center text-white`,
+    logoContainer: `flex items-center cursor-pointer space-x-1`,
+    logoText: `text-2xl font-bold text-white`,
+    navLinks: `flex text-lg items-center text-white`,
     navLink: `lg:px-8 md:px-4 sm:px-2`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
-    connectedButton: `flex flex-row bg-[#F4B942] items-center rounded-lg text-black`,
+    connectedButton: `flex flex-row bg-[#f9dc5c] items-center mt-1.5 rounded-lg text-black text-sm h-7`,
     walletBalance: `flex flex-row justify-center items-center rounded-l-lg pl-3 py-1 gap-1`,
-    ethIcon: `text-xl`,
-    innerButton: `bg-[#BA274A] hover:bg-[#3A506B] p-2 rounded-lg flex flex-row gap-2 ml-1 text-white`,
+    ethIcon: `text-md`,
+    innerButton: `bg-[#BA274A] hover:bg-[#3A506B] px-2 py-2 rounded-lg flex flex-row gap-2 ml-1 text-white`,
 };
 
 const Header = ({ title }) => {
@@ -78,6 +78,7 @@ const Header = ({ title }) => {
                 <ul className={style.navLinks}>
                     <li className={style.navLink}>About</li>
                     <li className={style.navLink}>Team</li>
+                    <li className={style.navLink}>FAQ</li>
                     <li className={style.navLink}>
                         <Link href="/mint">
                             <a>Mint</a>
