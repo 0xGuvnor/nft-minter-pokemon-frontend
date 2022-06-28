@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { openseaCollection } from "../constants";
 
 const style = {
     wrapper: `relative bg-repeat bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
@@ -36,7 +37,7 @@ const Hero = () => {
                             <Link href="/mint">
                                 <button className={style.mintButton}>Mint now</button>
                             </Link>
-                            <Link href="https://testnets.opensea.io/collection/pokedex-wpvsyayuqm">
+                            <Link href={openseaCollection}>
                                 <a
                                     className={style.openseaButton}
                                     target="_blank"
@@ -69,7 +70,7 @@ const Hero = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Ash_Ketchum
+                                        AshKetchum.eth
                                     </a>
                                 </div>
                             </div>

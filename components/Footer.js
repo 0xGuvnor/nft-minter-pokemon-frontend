@@ -3,6 +3,14 @@ import { FaTelegram } from "react-icons/fa";
 import { BsTwitter, BsGithub } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
 import { SiDiscord } from "react-icons/si";
+import {
+    discordUrl,
+    githubRepo,
+    githubUrl,
+    instagramUrl,
+    telegramUrl,
+    twitterUrl,
+} from "../constants";
 
 const style = {
     borderWrapper: `flex justify-between`,
@@ -24,38 +32,34 @@ const Footer = () => {
             </div>
             <div className={style.detailsWrapper}>
                 <div className={style.socialIcons}>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
                         <GrInstagram />
                     </a>
-                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                    <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
                         <BsTwitter />
                     </a>
 
-                    <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
+                    <a href={discordUrl} target="_blank" rel="noopener noreferrer">
                         <SiDiscord />
                     </a>
-                    <a href="https://web.telegram.org/k/" target="_blank" rel="noopener noreferrer">
+                    <a href={telegramUrl} target="_blank" rel="noopener noreferrer">
                         <FaTelegram />
                     </a>
 
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                         <BsGithub />
                     </a>
                 </div>
                 <div className={style.centerDetails}>
                     <a
-                        className="text-blue-600"
+                        className="text-blue-500"
                         href="https://faucets.chain.link/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         Get free testnet Ether
                     </a>
-                    <a
-                        href="https://github.com/0xbagholder"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href={githubRepo} target="_blank" rel="noopener noreferrer">
                         Built by 0xbagholder
                     </a>
                 </div>
