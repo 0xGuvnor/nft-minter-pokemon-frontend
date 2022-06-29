@@ -1,16 +1,54 @@
 import "../styles/globals.css";
-import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import "@rainbow-me/rainbowkit/styles.css";
+import {
+    darkTheme,
+    getDefaultWallets,
+    lightTheme,
+    midnightTheme,
+    RainbowKitProvider,
+} from "@rainbow-me/rainbowkit";
+import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 
 function MyApp({ Component, pageProps }) {
+    const defaultChains = [
+        {
+            ...chain.rinkeby,
+        },
+    ];
+    const { chains, provider } = configureChains(defaultChains, [
+        alchemyProvider({
+            alchemyId: "https://eth-rinkeby.alchemyapi.io/v2/Qc0EMS4dxGxL6PcVI2BtD25rqfNsYrKY",
+        }),
+        publicProvider(),
+    ]);
+    const { connectors } = getDefaultWallets({
+        appName: "Pokédex NFT Collection",
+        chains,
+    });
+    const wagmiClient = createClient({
+        autoConnect: true,
+        connectors,
+        provider,
+    });
+
     return (
-        <ThirdwebProvider
-            desiredChainId={ChainId.Rinkeby}
-            chainRpc={{
-                [ChainId.Rinkeby]: "https://rinkeby.infura.io/v3/80514b47890f4b358946727268128c71",
-            }}
-        >
-            <Component {...pageProps} />
-        </ThirdwebProvider>
+        <WagmiConfig client={wagmiClient}>
+            <RainbowKitProvider
+                coolMode
+                chains={chains}
+                theme={darkTheme({
+                    overlayBlur: "small",
+                    fontStack: "system",
+                    accentColor: "#BA274A",
+                    accentColorForeground: "white",
+                })}
+                showRecentTransactions={true}
+            >
+                <Component {...pageProps} />
+            </RainbowKitProvider>
+        </WagmiConfig>
     );
 }
 

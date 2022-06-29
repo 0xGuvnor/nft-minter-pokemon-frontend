@@ -5,8 +5,8 @@ const style = {
     background: `bg-gradient-to-b from-[#F9EA9A] to-[#f9dc5c]`,
     wrapper: `container mx-auto mb-8`,
     title: `text-5xl text-center underline mb-8`,
-    grid: `grid grid-cols-2 gap-8`,
-    gridContainer: `flex flex-col`,
+    grid: `grid grid-cols-2 gap-4`,
+    gridContainer: `flex flex-col ml-4 mr-4`,
     gridTitle: `text-xl mb-2`,
     gridDescription: `text-justify`,
 };
@@ -48,7 +48,7 @@ const FAQ = () => {
                     <div className={style.gridContainer}>
                         <h2 className={style.gridTitle}>How much is it to mint a Pokémon?</h2>
                         <p className={style.gridDescription}>
-                            Each Pokémon NFT costs 0.1 ETH to mint.
+                            Each Pokémon NFT costs 0.01 ETH to mint.
                         </p>
                     </div>
                     <div className={style.gridContainer}>

@@ -1,17 +1,14 @@
 import Head from "next/head";
 import React from "react";
-import { RiWallet2Line } from "react-icons/ri";
-import { FaEthereum } from "react-icons/fa";
-import { useAddress, useMetamask, useDisconnect, useBalance } from "@thirdweb-dev/react";
 import pokedexLogo from "../assets/pokedex.png";
 import Image from "next/image";
 import Link from "next/link";
-import blockies from "ethereum-blockies";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
     logoContainer: `flex items-center cursor-pointer space-x-1`,
-    logoText: `text-2xl font-bold text-white`,
+    logoText: `md:text-2xl md:font-bold md:text-white`,
     navLinks: `flex text-lg items-center text-white`,
     navLink: `lg:px-8 md:px-4 sm:px-2`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
@@ -22,44 +19,6 @@ const style = {
 };
 
 const Header = ({ title }) => {
-    const connectWithMetamask = useMetamask();
-    const disconnect = useDisconnect();
-    const address = useAddress();
-
-    const truncateAddress = (address) => {
-        const front = address.slice(0, 6);
-        const back = address.slice(-4);
-        return `${front}...${back}`;
-    };
-
-    const blockie = address ? blockies.create({ seed: address }).toDataURL() : undefined;
-
-    const Auth = () => {
-        return (
-            <button className={style.connectButton} onClick={connectWithMetamask}>
-                <RiWallet2Line />
-                Connect Metamask
-            </button>
-        );
-    };
-
-    const deAuth = () => {
-        return (
-            <div className={style.connectedButton}>
-                <div className={style.walletBalance}>
-                    {420.69}
-                    <div className={style.ethIcon}>
-                        <FaEthereum />
-                    </div>
-                </div>
-                <button className={style.innerButton} onClick={disconnect}>
-                    <Image src={blockie} height={20} width={20} />
-                    {truncateAddress(address)}
-                </button>
-            </div>
-        );
-    };
-
     return (
         <div>
             <Head>
@@ -85,7 +44,7 @@ const Header = ({ title }) => {
                         </Link>
                     </li>
                 </ul>
-                {address ? deAuth() : Auth()}
+                <ConnectButton />
             </div>
         </div>
     );
