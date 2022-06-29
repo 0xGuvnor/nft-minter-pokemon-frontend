@@ -23,7 +23,7 @@ const style = {
     authorInfo: `text-white flex flex-col ml-2 text-[8px] lg:text-sm`,
     author: `text-[#00B4D8]`,
     descriptionContainer: `flex justify-center`,
-    description: `mt-12 mx-8 md:mx-0 text-start text-lg md:w-4/5`,
+    description: `mt-12 mx-8 md:mx-0 text-justify text-lg md:w-4/5`,
 };
 
 const About = () => {

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const style = {
-    wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen`,
+    wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen items-center`,
     logoContainer: `flex items-center cursor-pointer space-x-1`,
     logoText: `md:text-2xl md:font-bold md:text-white`,
     navLinks: `flex text-lg items-center text-white`,
