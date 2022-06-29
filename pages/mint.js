@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import FadeIn from "react-fade-in";
 
 const style = {
     wrapper: ``,
@@ -8,12 +9,14 @@ const style = {
 
 const mint = () => {
     return (
-        <div>
-            <Header title={"Mint"} />
-            <div className={style.wrapper}>mint</div>
+        <FadeIn>
+            <div>
+                <Header title={"Mint"} />
+                <div className={style.wrapper}>mint</div>
 
-            <Footer />
-        </div>
+                <Footer />
+            </div>
+        </FadeIn>
     );
 };
 

@@ -60,7 +60,7 @@ const FAQ = () => {
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>Where is the Pokédex collection stored?</h2>
+                        <h2 className={style.gridTitle}>Where is the Pokédex Collection stored?</h2>
                         <p className={style.gridDescription}>
                             Your NFT is securely stored at the address / wallet you used to mint or
                             purchase. You can verify via{" "}

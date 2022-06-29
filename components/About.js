@@ -22,8 +22,10 @@ const style = {
     avatar: `bg-white rounded-full ml-3 w-[1rem] h-[1rem] lg:w-5 lg:h-5`,
     authorInfo: `text-white flex flex-col ml-2 text-[8px] lg:text-sm`,
     author: `text-[#00B4D8]`,
-    descriptionContainer: `flex justify-center`,
-    description: `mt-12 mx-8 md:mx-0 text-justify text-lg md:w-4/5`,
+    descriptionWrapper: `flex justify-center`,
+    descriptionContainer: `flex flex-col md:w-4/5`,
+    description: `mt-12 mx-8 md:mx-0 text-justify text-lg`,
+    rarityDescription: `text-start flex flex-col mx-8 md:mx-0`,
 };
 
 const About = () => {
@@ -113,38 +115,40 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className={style.descriptionContainer}>
-                    <p className={style.description}>
-                        The Pokedéx Collection is an NFT collection of Pokémon spanning over the
-                        first 5 generations of Pokémon, with a total supply of 200 NFTs.
-                        <br />
-                        <br />
-                        Each Pokémon NFT is chosen randomly via{" "}
-                        <a
-                            href="https://docs.chain.link/docs/chainlink-vrf/"
-                            className="text-blue-500 underline"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Chainlink VRF
-                        </a>{" "}
-                        (Verifiable Random Function) to ensure true randomness when selecting a
-                        Pokémon. Once a Pokémon is chosen to be minted, that Pokémon will be removed
-                        from the pool of available Pokémon to be chosen from, ensuring each Pokémon
-                        will only be able to be minted once.
-                        <br />
-                        <br />
-                        Rarity for each Pokémon generation is as follows:
-                        <br />
-                        <br />
-                        <div className="text-start flex flex-col">
+                <div className={style.descriptionWrapper}>
+                    <div className={style.descriptionContainer}>
+                        <p className={style.description}>
+                            The Pokedéx Collection is an NFT collection of Pokémon spanning across
+                            the first 5 generations of Pokémon, with a maximum supply of 200 NFTs.
+                            <br />
+                            <br />
+                            Each Pokémon NFT is chosen randomly via{" "}
+                            <a
+                                href="https://docs.chain.link/docs/chainlink-vrf/"
+                                className="text-blue-500 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Chainlink VRF
+                            </a>{" "}
+                            (Verifiable Random Function) to ensure true randomness when selecting a
+                            Pokémon. Once a Pokémon is chosen to be minted, that Pokémon will be
+                            removed from the pool of available Pokémon to be chosen from, ensuring
+                            each Pokémon will only be able to be minted once.
+                            <br />
+                            <br />
+                            Rarity for each Pokémon generation is as follows:
+                            <br />
+                            <br />
+                        </p>
+                        <div className={style.rarityDescription}>
                             Generation 1:{" "}
-                            <span className="font-extrabold bg-[#FF2E00] p-2 rounded-full w-[10rem] text-white text-center">
+                            <span className="font-extrabold bg-[#ff2f00eb] p-2 rounded-full w-[10rem] text-white text-center">
                                 10%
                             </span>
                             <br />
                             Generation 2:{" "}
-                            <span className="font-extrabold bg-[#cd4527] p-2 rounded-full w-[15rem] text-white text-center">
+                            <span className="font-extrabold bg-[#dc4827] p-2 rounded-full w-[15rem] text-white text-center">
                                 15%
                             </span>
                             <br />
@@ -163,7 +167,7 @@ const About = () => {
                                 30%
                             </span>
                         </div>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
