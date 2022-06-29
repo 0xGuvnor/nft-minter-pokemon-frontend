@@ -64,11 +64,21 @@ const FAQ = () => {
                         <p className={style.gridDescription}>
                             Your NFT is securely stored at the address / wallet you used to mint or
                             purchase. You can verify via{" "}
-                            <a href={etherscanUrl} className="text-blue-500 underline">
+                            <a
+                                href={etherscanUrl}
+                                className="text-blue-500 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Etherscan
                             </a>
                             . You can also view your Pokémon on OpenSea:{" "}
-                            <a href={openseaCollection} className="text-blue-500 underline">
+                            <a
+                                href={openseaCollection}
+                                className="text-blue-500 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Pokédex Collection
                             </a>
                             .
@@ -78,16 +88,31 @@ const FAQ = () => {
                         <h2 className={style.gridTitle}>How do I get involved?</h2>
                         <p className={style.gridDescription}>
                             Mint a Pokémon yourself, or purchase a Pokémon of your liking on{" "}
-                            <a href={openseaCollection} className="text-blue-500 underline">
+                            <a
+                                href={openseaCollection}
+                                className="text-blue-500 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 OpenSea
                             </a>
                             . Head over to the{" "}
-                            <a href={openseaCollection} className="text-blue-500 underline">
+                            <a
+                                href={openseaCollection}
+                                className="text-blue-500 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Pokédex Discord
                             </a>
                             , jump in on the conversation and let us know your ideas! In Discord you
                             can verify as a holder to access gated channels. Jump on{" "}
-                            <a href={twitterUrl} className="text-blue-500 underline">
+                            <a
+                                href={twitterUrl}
+                                className="text-blue-500 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Twitter
                             </a>{" "}
                             and show your support for the project!

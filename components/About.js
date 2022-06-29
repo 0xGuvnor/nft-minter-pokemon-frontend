@@ -8,7 +8,7 @@ import Eevee from "../assets/Eevee.png";
 import emptyPFP from "../assets/emptyPFP.png";
 
 const style = {
-    background: `bg-gradient-to-b from-[#7b7312] to-[#f9dc5c] h-screen`,
+    background: `bg-gradient-to-b from-[#7b7312] to-[#f9dc5c] min-h-screen mb-10`,
     wrapper: `container mx-auto pt-4`,
     title: `text-5xl text-center underline mb-8 text-white`,
     imageContainer: `flex flex-row justify-center gap-4 drop-shadow-2xl`,
@@ -23,7 +23,7 @@ const style = {
     authorInfo: `text-white flex flex-col ml-2 text-[8px] lg:text-sm`,
     author: `text-[#00B4D8]`,
     descriptionContainer: `flex justify-center`,
-    description: `mt-12 mx-8 md:mx-0 text-center text-xl md:w-4/5 bg-white`,
+    description: `mt-12 mx-8 md:mx-0 text-start text-lg md:w-4/5`,
 };
 
 const About = () => {
@@ -115,11 +115,54 @@ const About = () => {
                 </div>
                 <div className={style.descriptionContainer}>
                     <p className={style.description}>
-                        So I started to walk into the water. I won't lie to you boys, I was
-                        terrified. But I pressed on, and as I made my way past the breakers a
-                        strange calm came over me. I don't know if it was divine intervention or the
-                        kinship of all living things but I tell you Jerry at that moment, I was a
-                        marine biologist.
+                        The Pokedéx Collection is an NFT collection of Pokémon spanning over the
+                        first 5 generations of Pokémon, with a total supply of 200 NFTs.
+                        <br />
+                        <br />
+                        Each Pokémon NFT is chosen randomly via{" "}
+                        <a
+                            href="https://docs.chain.link/docs/chainlink-vrf/"
+                            className="text-blue-500 underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Chainlink VRF
+                        </a>{" "}
+                        (Verifiable Random Function) to ensure true randomness when selecting a
+                        Pokémon. Once a Pokémon is chosen to be minted, that Pokémon will be removed
+                        from the pool of available Pokémon to be chosen from, ensuring each Pokémon
+                        will only be able to be minted once.
+                        <br />
+                        <br />
+                        Rarity for each Pokémon generation is as follows:
+                        <br />
+                        <br />
+                        <div className="text-start flex flex-col">
+                            Generation 1:{" "}
+                            <span className="font-extrabold bg-[#FF2E00] p-2 rounded-full w-[10rem] text-white text-center">
+                                10%
+                            </span>
+                            <br />
+                            Generation 2:{" "}
+                            <span className="font-extrabold bg-[#cd4527] p-2 rounded-full w-[15rem] text-white text-center">
+                                15%
+                            </span>
+                            <br />
+                            Generation 3:{" "}
+                            <span className="font-extrabold bg-[#c74122] p-2 rounded-full w-[20rem] text-white text-center">
+                                20%
+                            </span>
+                            <br />
+                            Generation 4:{" "}
+                            <span className="font-extrabold bg-[#ac371c] p-2 rounded-full w-[25rem] text-white text-center">
+                                25%
+                            </span>
+                            <br />
+                            Generation 5:{" "}
+                            <span className="font-extrabold bg-[#9c1919] p-2 rounded-full w-[30rem] text-white text-center">
+                                30%
+                            </span>
+                        </div>
                     </p>
                 </div>
             </div>
