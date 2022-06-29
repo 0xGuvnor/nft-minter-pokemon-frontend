@@ -7,9 +7,9 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen items-center`,
-    logoContainer: `flex items-center cursor-pointer space-x-1`,
+    logoContainer: `flex items-center cursor-pointer space-x-2`,
     logoText: `md:text-2xl md:font-bold md:text-white`,
-    navLinks: `flex text-lg items-center text-white`,
+    navLinks: `flex ml-16 text-lg items-center text-white`,
     navLink: `lg:px-8 md:px-4 sm:px-2`,
     connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
     connectedButton: `flex flex-row bg-[#f9dc5c] items-center mt-1.5 rounded-lg text-black text-sm h-7`,

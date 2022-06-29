@@ -10,6 +10,7 @@ import {
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
     const defaultChains = [
@@ -47,6 +48,7 @@ function MyApp({ Component, pageProps }) {
                 showRecentTransactions={true}
             >
                 <Component {...pageProps} />
+                <Footer />
             </RainbowKitProvider>
         </WagmiConfig>
     );

@@ -21,7 +21,6 @@ export default function Home() {
                 </div>
                 <Team />
                 <FAQ />
-                <Footer />
             </div>
         </FadeIn>
     );

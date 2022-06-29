@@ -1,19 +1,21 @@
 import React from "react";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FadeIn from "react-fade-in";
 import MintCard from "../components/MintCard";
+import MintStats from "../components/MintStats";
 
 const style = {
-    wrapper: ``,
+    wrapper: `flex flex-col md:flex-row justify-center`,
 };
 
 const mint = () => {
     return (
         <FadeIn>
             <Header title={"Mint"} />
-            <MintCard />
-            <Footer />
+            <div className={style.wrapper}>
+                <MintStats />
+                <MintCard />
+            </div>
         </FadeIn>
     );
 };
