@@ -18,7 +18,7 @@ const FAQ = () => {
                 <h1 className={style.title}>FAQ</h1>
                 <div className={style.grid}>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>What&apos;s an NFT?</h2>
+                        <h1 className={style.gridTitle}>What&apos;s an NFT?</h1>
                         <p className={style.gridDescription}>
                             An NFT stands for &quot;non-fungible token&quot;, a one of a kind token
                             that proves ownership of a digital item. Once you own that item, you can
@@ -32,7 +32,7 @@ const FAQ = () => {
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>What are Pokémon?</h2>
+                        <h1 className={style.gridTitle}>What are Pokémon?</h1>
                         <p className={style.gridDescription}>
                             Pokémon (an abbreviation for Pocket Monsters in Japan) is a Japanese
                             media franchise managed by The Pokémon Company, a company founded by
@@ -46,13 +46,13 @@ const FAQ = () => {
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>How much is it to mint a Pokémon?</h2>
+                        <h1 className={style.gridTitle}>How much is it to mint a Pokémon?</h1>
                         <p className={style.gridDescription}>
                             Each Pokémon NFT costs 0.01 ETH to mint.
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>What can I do with my Pokémon?</h2>
+                        <h1 className={style.gridTitle}>What can I do with my Pokémon?</h1>
                         <p className={style.gridDescription}>
                             Create and mint derivatives. Use it as your PFP on social media. Buy a
                             Billboard Space! Create a brand using your Pokémon! Create merch!
@@ -60,7 +60,7 @@ const FAQ = () => {
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>Where is the Pokédex Collection stored?</h2>
+                        <h1 className={style.gridTitle}>Where is the Pokédex Collection stored?</h1>
                         <p className={style.gridDescription}>
                             Your NFT is securely stored at the address / wallet you used to mint or
                             purchase. You can verify via{" "}
@@ -85,7 +85,7 @@ const FAQ = () => {
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h2 className={style.gridTitle}>How do I get involved?</h2>
+                        <h1 className={style.gridTitle}>How do I get involved?</h1>
                         <p className={style.gridDescription}>
                             Mint a Pokémon yourself, or purchase a Pokémon of your liking on{" "}
                             <a

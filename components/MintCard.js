@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import Pokeballs from "../assets/Pokeballs.webp";
 
 const style = {
-    wrapper: `flex flex-col drop-shadow-2xl rounded-2xl m-4 px-6 pt-6 pb-2 bg-[#E8E9F3] items-center justify-center`,
+    container: `flex justify-center items-center z-10`,
+    wrapper: `flex flex-col shadow-2xl rounded-2xl m-4 md:my-16 px-6 pt-6 pb-2 bg-[#E8E9F3] items-center justify-center w-[22rem] md:max-w-none`,
     imageWrapper: `h-72 w-72 items-center flex justify-center`,
     mintFeeTitle: `text-3xl m-4 mb-4`,
     mintAmountSelection: `text-xl space-x-4 flex justify-between`,
@@ -31,21 +32,23 @@ const MintCard = () => {
     };
 
     return (
-        <div className={style.wrapper}>
-            <div className={style.imageWrapper}>
-                <Image src={Pokeballs} />
+        <div className={style.container}>
+            <div className={style.wrapper}>
+                <div className={style.imageWrapper}>
+                    <Image src={Pokeballs} />
+                </div>
+                <h1 className={style.mintFeeTitle}>Mint Fee: Ξ{mintFee}</h1>
+                <div className={style.mintAmountSelection}>
+                    <button className={style.mintAmountStepper} onClick={handleDecrement}>
+                        -
+                    </button>
+                    <input className={style.mintAmountValue} value={mintAmount} />
+                    <button className={style.mintAmountStepper} onClick={handleIncrement}>
+                        +
+                    </button>
+                </div>
+                <button className={style.mintButton}>Mint</button>
             </div>
-            <h1 className={style.mintFeeTitle}>Mint Fee: Ξ{mintFee}</h1>
-            <div className={style.mintAmountSelection}>
-                <button className={style.mintAmountStepper} onClick={handleDecrement}>
-                    -
-                </button>
-                <input className={style.mintAmountValue} value={mintAmount} />
-                <button className={style.mintAmountStepper} onClick={handleIncrement}>
-                    +
-                </button>
-            </div>
-            <button className={style.mintButton}>Mint</button>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import React from "react";
 import { openseaCollection } from "../constants";
 
 const style = {
-    wrapper: `relative bg-repeat bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
+    wrapper: `relative bg-fixed bg-repeat bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
     container: `backdrop-blur-[2px] backdrop-brightness-50`,
     contentWrapper: `flex h-screen w-screen relative justify-center flex-wrap items-center`,
     copyContainer: `w-1/2 lg:mr-6`,

@@ -1,7 +1,12 @@
 import React from "react";
 
 const style = {
-    wrapper: `flex flex-col items-center justify-center bg-white`,
+    wrapper: `flex flex-col items-center justify-center drop-shadow-2xl bg-[#E8E9F3] mix-blend-luminosity pt-4 md:pt-6 mt-4 md:mb-6 mx-auto md:mx-0 text-lg md:text-2xl rounded-2xl`,
+    title: `text-xl md:text-3xl`,
+    statsTop: `flex text-center items-center space-x-28 md:space-x-40 p-6 md:pb-12 md:pt-8`,
+    statsMiddle: `flex flex-col text-center items-center p-6 md:py-12`,
+    statsBottom: `flex text-center items-center space-x-28 md:space-x-40 p-6 md:py-12`,
+    statsValue: `text-3xl`,
 };
 
 const MintStats = () => {
@@ -14,19 +19,30 @@ const MintStats = () => {
 
     return (
         <div className={style.wrapper}>
-            <h1>Circulating Supply: {circulatingSupply}/200</h1>
-            <div className="container mx-auto">
-                <div className="relative left-0 top-0 h-16 w-16">
-                    Gen 1 selected: {gen1Chosen}/xx
+            <h1 className={style.title}>Circulating Supply:</h1>
+            <h2>{circulatingSupply}/200</h2>
+            <div className={style.statsTop}>
+                <div>
+                    <h1>Gen. 1 chosen:</h1>
+                    <h3 className={style.statsValue}>{gen1Chosen}/151</h3>
                 </div>
-                <div className="relative right-0 top-0 h-16 w-16">
-                    Gen 2 selected: {gen2Chosen}/xx
+                <div>
+                    <h1>Gen. 2 chosen:</h1>
+                    <h3 className={style.statsValue}>{gen2Chosen}/100</h3>
                 </div>
-                <div className="relative bottom-0 left-0 h-16 w-16">
-                    Gen 3 selected: {gen3Chosen}/xx
+            </div>
+            <div className={style.statsMiddle}>
+                <h1>Gen. 5 chosen:</h1>
+                <h3 className={style.statsValue}>{gen5Chosen}/156</h3>
+            </div>
+            <div className={style.statsBottom}>
+                <div>
+                    <h1>Gen. 3 chosen:</h1>
+                    <h3 className={style.statsValue}>{gen3Chosen}/135</h3>
                 </div>
-                <div className="relative bottom-0 right-0 h-16 w-16">
-                    Gen 4 selected: {gen4Chosen}/xx
+                <div>
+                    <h1>Gen. 4 chosen:</h1>
+                    <h3 className={style.statsValue}>{gen4Chosen}/107</h3>
                 </div>
             </div>
         </div>
