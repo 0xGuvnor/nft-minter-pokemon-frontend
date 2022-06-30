@@ -10,7 +10,7 @@ import {
     instagramUrl,
     telegramUrl,
     twitterUrl,
-} from "../constants";
+} from "../constants/urlLinks";
 
 const style = {
     borderWrapper: `flex justify-between`,

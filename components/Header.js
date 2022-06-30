@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import pokedexLogo from "../assets/pokedex.png";
+import Pokedex2 from "../assets/Pokedex2.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -30,7 +31,7 @@ const Header = ({ title }) => {
             <div className={style.wrapper}>
                 <Link href="/">
                     <div className={style.logoContainer}>
-                        <Image src={pokedexLogo} height={40} width={40} />
+                        <Image src={Pokedex2} height={40} width={40} />
                         <h1 className={style.logoText}>Pokédex</h1>
                     </div>
                 </Link>

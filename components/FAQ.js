@@ -1,5 +1,5 @@
 import React from "react";
-import { etherscanUrl, openseaCollection, twitterUrl } from "../constants";
+import { discordUrl, etherscanUrl, openseaCollection, twitterUrl } from "../constants/urlLinks";
 
 const style = {
     background: `bg-gradient-to-b from-[#F9EA9A] to-[#f9dc5c]`,
@@ -98,7 +98,7 @@ const FAQ = () => {
                             </a>
                             . Head over to the{" "}
                             <a
-                                href={openseaCollection}
+                                href={discordUrl}
                                 className="text-blue-500 underline"
                                 target="_blank"
                                 rel="noopener noreferrer"

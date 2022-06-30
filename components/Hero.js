@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { openseaCollection } from "../constants";
+import { openseaCollection } from "../constants/urlLinks";
 
 const style = {
     wrapper: `relative bg-fixed bg-repeat bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
