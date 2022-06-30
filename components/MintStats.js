@@ -1,4 +1,6 @@
 import React from "react";
+import { useNetwork } from "wagmi";
+import networkMapping from "../constants/networkMapping.json";
 
 const style = {
     wrapper: `flex flex-col items-center justify-center drop-shadow-2xl bg-[#E8E9F3] mix-blend-luminosity pt-4 md:pt-6 mt-4 md:mb-6 mx-auto md:mx-0 text-lg md:text-2xl rounded-2xl`,
@@ -10,12 +12,19 @@ const style = {
 };
 
 const MintStats = () => {
+    const { chain } = useNetwork();
+
     const circulatingSupply = 69;
     const gen1Chosen = 1;
     const gen2Chosen = 2;
     const gen3Chosen = 3;
     const gen4Chosen = 4;
     const gen5Chosen = 5;
+
+    const chainId = chain && chain.id;
+    const pokedexAddress = networkMapping[chainId].Pokedex[0];
+
+    console.log(pokedexAddress);
 
     return (
         <div className={style.wrapper}>

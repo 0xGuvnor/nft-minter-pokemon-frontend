@@ -42,7 +42,7 @@ const MintCard = () => {
                     <button className={style.mintAmountStepper} onClick={handleDecrement}>
                         -
                     </button>
-                    <input className={style.mintAmountValue} value={mintAmount} />
+                    <input readOnly className={style.mintAmountValue} value={mintAmount} />
                     <button className={style.mintAmountStepper} onClick={handleIncrement}>
                         +
                     </button>

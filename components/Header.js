@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React from "react";
-import pokedexLogo from "../assets/pokedex.png";
 import Pokedex2 from "../assets/Pokedex2.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,14 +8,9 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 const style = {
     wrapper: `flex justify-between px-6 py-4 bg-[#0F1108] w-screen items-center`,
     logoContainer: `flex items-center cursor-pointer space-x-2`,
-    logoText: `md:text-2xl md:font-bold md:text-white`,
+    logoText: `md:text-2xl md:font-bold text-white hidden md:block`,
     navLinks: `flex ml-16 text-lg items-center text-white`,
-    navLink: `lg:px-8 md:px-4 sm:px-2`,
-    connectButton: `flex items-center gap-1 bg-[#BA274A] rounded-lg w-auto px-3 drop-shadow-xl transition-all hover:bg-[#3A506B] text-white`,
-    connectedButton: `flex flex-row bg-[#f9dc5c] items-center mt-1.5 rounded-lg text-black text-sm h-7`,
-    walletBalance: `flex flex-row justify-center items-center rounded-l-lg pl-3 py-1 gap-1`,
-    ethIcon: `text-md`,
-    innerButton: `bg-[#BA274A] hover:bg-[#3A506B] px-2 py-2 rounded-lg flex flex-row gap-2 ml-1 text-white`,
+    navLink: `lg:px-8 md:px-4 sm:px-2 hidden sm:block`,
 };
 
 const Header = ({ title }) => {

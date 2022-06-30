@@ -9,6 +9,7 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
+import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
 import Footer from "../components/Footer";
 
@@ -19,8 +20,8 @@ function MyApp({ Component, pageProps }) {
         },
     ];
     const { chains, provider } = configureChains(defaultChains, [
-        alchemyProvider({
-            alchemyId: "https://eth-rinkeby.alchemyapi.io/v2/Qc0EMS4dxGxL6PcVI2BtD25rqfNsYrKY",
+        infuraProvider({
+            infuraId: "https://rinkeby.infura.io/v3/80514b47890f4b358946727268128c71",
         }),
         publicProvider(),
     ]);
