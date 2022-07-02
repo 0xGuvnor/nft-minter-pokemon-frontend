@@ -28,7 +28,7 @@ const Mint = () => {
                 </div>
             ) : (
                 <div className="min-h-screen flex justify-center items-center">
-                    <div className="alert alert-error shadow-lg w-2/3">
+                    <div className="alert alert-error shadow-lg w-2/3 -translate-y-24">
                         <div>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
