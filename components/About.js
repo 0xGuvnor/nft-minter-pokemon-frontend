@@ -143,27 +143,27 @@ const About = () => {
                         </p>
                         <div className={style.rarityDescription}>
                             Generation 1:{" "}
-                            <span className="font-extrabold bg-[#ff2f00eb] p-2 rounded-full w-[10rem] text-white text-center">
+                            <span className="font-extrabold bg-[#ff2f00eb] p-2 rounded-full w-[5rem] sm:w-[10rem] text-white text-center">
                                 10%
                             </span>
                             <br />
                             Generation 2:{" "}
-                            <span className="font-extrabold bg-[#dc4827] p-2 rounded-full w-[15rem] text-white text-center">
+                            <span className="font-extrabold bg-[#dc4827] p-2 rounded-full w-[7.5rem] sm:w-[15rem] text-white text-center">
                                 15%
                             </span>
                             <br />
                             Generation 3:{" "}
-                            <span className="font-extrabold bg-[#c74122] p-2 rounded-full w-[20rem] text-white text-center">
+                            <span className="font-extrabold bg-[#c74122] p-2 rounded-full w-[10rem] sm:w-[20rem] text-white text-center">
                                 20%
                             </span>
                             <br />
                             Generation 4:{" "}
-                            <span className="font-extrabold bg-[#ac371c] p-2 rounded-full w-[25rem] text-white text-center">
+                            <span className="font-extrabold bg-[#ac371c] p-2 rounded-full w-[12.5rem] sm:w-[25rem] text-white text-center">
                                 25%
                             </span>
                             <br />
                             Generation 5:{" "}
-                            <span className="font-extrabold bg-[#9c1919] p-2 rounded-full w-[30rem] text-white text-center">
+                            <span className="font-extrabold bg-[#9c1919] p-2 rounded-full w-[15rem] sm:w-[30rem] text-white text-center">
                                 30%
                             </span>
                         </div>
