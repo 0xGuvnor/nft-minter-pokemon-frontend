@@ -33,7 +33,7 @@ const Team = () => {
                 <h1 className={style.title}>The Team</h1>
                 <div className={style.grid}>
                     <div className={style.gridItem}>
-                        <div className={style.memberBackground}>
+                        <div className="h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 sm:px-14 mt-2 sm:mt-0 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]">
                             <Image src={AshKetchum} />
                         </div>
                         <div className={style.memberDetails}>
@@ -107,7 +107,7 @@ const Team = () => {
                         </div>
                     </div>
                     <div className={style.gridItem}>
-                        <div className={style.memberBackground}>
+                        <div className="h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 sm:px-14 mt-4 sm:mt-0 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]">
                             <Image src={OfficerJenny} />
                         </div>
                         <div className={style.memberDetails}>
