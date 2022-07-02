@@ -15,13 +15,13 @@ const style = {
 const MintStats = () => {
     const { chain } = useNetwork();
 
-    const [pokedexAddress, setPokedexAddress] = useState("");
     const [gen1Count, setGen1Count] = useState(0);
     const [gen2Count, setGen2Count] = useState(0);
     const [gen3Count, setGen3Count] = useState(0);
     const [gen4Count, setGen4Count] = useState(0);
     const [gen5Count, setGen5Count] = useState(0);
     const [circulatingSupply, setCirculatingSupply] = useState(0);
+    const [pokedexAddress, setPokedexAddress] = useState("");
 
     const pokedexContract = { addressOrName: pokedexAddress, contractInterface: PokedexABI };
 
