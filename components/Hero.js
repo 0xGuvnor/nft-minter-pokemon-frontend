@@ -14,9 +14,9 @@ const style = {
     openseaButton: `text-[0.7rem] sm:text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#576066] md:rounded-full rounded-lg text-white  hover:bg-[#7D8491] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
     cardContainer: `drop-shadow-2xl h-[14rem] w-[14rem] sm:h-[28rem] sm:w-[28rem] lg:h-[30rem] lg:w-[30rem] xl:h-[36rem] xl:w-[36rem] -translate-y-16 md:translate-y-0 md:mb-12`,
     imageCard: `rounded-t-3xl`,
-    infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
+    infoContainer: `h-12 sm:h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
     avatar: `h-[2rem] sm:h-[2.5rem] rounded-full`,
-    authorInfo: `ml-4 flex flex-col text-[0.7rem] sm:text-md`,
+    authorInfo: `ml-2 sm:ml-4 flex flex-col text-[0.7rem] sm:text-md`,
     author: `text-[#00B4D8] ml-2`,
 };
 
