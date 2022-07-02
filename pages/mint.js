@@ -9,7 +9,7 @@ const style = {
     wrapper: `flex flex-col md:flex-row justify-center items-center md:mb-8 md:mt-4`,
 };
 
-const mint = () => {
+const Mint = () => {
     const { isConnected } = useAccount();
 
     const [connected, setConnected] = useState(false);
@@ -52,4 +52,4 @@ const mint = () => {
     );
 };
 
-export default mint;
+export default Mint;
