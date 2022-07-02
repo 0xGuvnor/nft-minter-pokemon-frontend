@@ -10,13 +10,13 @@ const style = {
     title: `text-4xl md:text-5xl font-bold text-white text-center lg:text-left`,
     description: `text-[#FEE440] text-md md:text-xl rounded-xl px-2 py-4 lg:py-8 mt-2 text-center lg:text-left`,
     ctaContainer: `flex justify-center lg:justify-start space-x-4`,
-    mintButton: `text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#04E762] md:rounded-full rounded-lg hover:bg-[#89FC00] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
-    openseaButton: `text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#576066] md:rounded-full rounded-lg text-white  hover:bg-[#7D8491] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
+    mintButton: `text-xs sm:text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#04E762] md:rounded-full rounded-lg hover:bg-[#89FC00] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
+    openseaButton: `text-xs sm:text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#576066] md:rounded-full rounded-lg text-white  hover:bg-[#7D8491] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
     cardContainer: `drop-shadow-2xl h-[14rem] w-[14rem] sm:h-[28rem] sm:w-[28rem] lg:h-[30rem] lg:w-[30rem] xl:h-[36rem] xl:w-[36rem] -translate-y-16 md:translate-y-0 md:mb-12`,
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
-    avatar: `h-[2.5rem] rounded-full`,
-    authorInfo: `ml-4 flex flex-col text-md`,
+    avatar: `h-[1.5] sm:h-[2.5rem] rounded-full`,
+    authorInfo: `ml-4 flex flex-col text-xs sm:text-md`,
     author: `text-[#00B4D8] ml-2`,
 };
 
