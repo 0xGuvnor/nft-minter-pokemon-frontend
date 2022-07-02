@@ -1,4 +1,4 @@
-export const openseaCollection = "https://testnets.opensea.io/collection/pokedex-wpvsyayuqm";
+export const openseaCollection = "https://testnets.opensea.io/collection/pokedex-am6jrlzxsu";
 export const instagramUrl = "https://www.instagram.com/";
 export const twitterUrl = "https://twitter.com/";
 export const discordUrl = "https://discord.com/";

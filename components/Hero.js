@@ -16,7 +16,7 @@ const style = {
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-12 sm:h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
     avatar: `h-[1.7rem] sm:h-[2.5rem] rounded-full`,
-    authorInfo: `ml-2 sm:ml-4 flex flex-col text-[0.7rem] sm:text-md`,
+    authorInfo: `ml-2 sm:ml-4 flex flex-col text-[0.7rem] sm:text-base`,
     author: `text-[#00B4D8] ml-2`,
 };
 
