@@ -42,7 +42,7 @@ const MintCard = () => {
 
     console.log(status, signer);
 
-    const mint = async () => {
+    const mintNFT = async () => {
         try {
             const tx = await pokedexContract.requestMint(mintAmount, {
                 value: ethers.utils.parseEther(mintFee.toString()),
@@ -97,7 +97,7 @@ const MintCard = () => {
                 {isLoading ? (
                     <button className={style.loadingButton}>Loading</button>
                 ) : (
-                    <button className={style.mintButton} onClick={mint} disabled={isLoading}>
+                    <button className={style.mintButton} onClick={mintNFT} disabled={isLoading}>
                         Mint
                     </button>
                 )}
