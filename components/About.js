@@ -17,7 +17,7 @@ const style = {
     position3: `z-20 mt-32 2xl:mx-4`,
     position4: `-ml-11 mr-11 z-10 mt-16 2xl:-ml-0 2xl:mr-4`,
     position5: `-ml-20 mr-20 z0 2xl:-ml-0 2xl:mr-4`,
-    image: `bg-white rounded-t-2xl lg:rounded-t-3xl p-2 flex flex-col outline outline-1 h-[5rem] w-[5rem] sm:h-[8rem] sm:w-[8rem] md:h-[10rem] md:w-[10rem] lg:h-[13rem] lg:w-[13rem] xl:h-[16rem] xl:w-[16rem]`,
+    image: `bg-white rounded-t-2xl lg:rounded-t-3xl p-2 flex flex-col border h-[5rem] w-[5rem] sm:h-[8rem] sm:w-[8rem] md:h-[10rem] md:w-[10rem] lg:h-[13rem] lg:w-[13rem] xl:h-[16rem] xl:w-[16rem]`,
     infoContainer: `bg-black h-7 md:h-8 lg:h-11 xl:h-12 rounded-b-2xl lg:rounded-b-3xl flex items-center`,
     avatar: `bg-white rounded-full ml-3 w-[1rem] h-[1rem] lg:w-5 lg:h-5`,
     authorInfo: `text-white flex flex-col ml-2 text-[6px] sm:text-[8px] lg:text-sm`,
