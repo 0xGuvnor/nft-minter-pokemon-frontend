@@ -15,7 +15,7 @@ const style = {
     cardContainer: `drop-shadow-2xl h-[14rem] w-[14rem] sm:h-[28rem] sm:w-[28rem] lg:h-[30rem] lg:w-[30rem] xl:h-[36rem] xl:w-[36rem] -translate-y-16 md:translate-y-0 md:mb-12`,
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-12 sm:h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
-    avatar: `h-[2rem] sm:h-[2.5rem] rounded-full`,
+    avatar: `h-[1.7rem] sm:h-[2.5rem] rounded-full`,
     authorInfo: `ml-2 sm:ml-4 flex flex-col text-[0.7rem] sm:text-md`,
     author: `text-[#00B4D8] ml-2`,
 };
