@@ -19,13 +19,13 @@ const style = {
     position5: `-ml-20 mr-20 z0 2xl:-ml-0 2xl:mr-4`,
     image: `bg-white rounded-t-2xl lg:rounded-t-3xl p-2 flex flex-col border h-[5rem] w-[5rem] sm:h-[8rem] sm:w-[8rem] md:h-[10rem] md:w-[10rem] lg:h-[13rem] lg:w-[13rem] xl:h-[16rem] xl:w-[16rem]`,
     infoContainer: `bg-black h-7 md:h-8 lg:h-11 xl:h-12 rounded-b-2xl lg:rounded-b-3xl flex items-center`,
-    avatar: `bg-white rounded-full ml-3 w-[1rem] h-[1rem] lg:w-5 lg:h-5`,
+    avatar: `bg-white rounded-full ml-2 sm:ml-3 w-[1rem] h-[1rem] lg:w-5 lg:h-5`,
     authorInfo: `text-white flex flex-col ml-2 text-[6px] sm:text-[8px] lg:text-sm`,
     author: `text-[#00B4D8]`,
     descriptionWrapper: `flex justify-center`,
     descriptionContainer: `flex flex-col md:w-4/5`,
-    description: `mt-12 mx-8 md:mx-0 text-justify text-sm md:text-lg`,
-    rarityDescription: `text-start flex flex-col text-sm md:text-lg mx-8 md:mx-0`,
+    description: `mt-12 mx-4 md:mx-0 text-justify text-sm md:text-lg`,
+    rarityDescription: `text-start flex flex-col text-sm md:text-lg mx-4 md:mx-0`,
 };
 
 const About = () => {

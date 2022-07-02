@@ -17,13 +17,13 @@ const style = {
     grid: `grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 2xl:grid-cols-3 lg:grid-rows-2`,
     gridItem: `my-4 flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,
     gridItemJoy: `my-4 ml-[0.7rem] flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,
-    memberBackground: `rounded-full py-4 px-14 bg-gradient-to-r from-[#E84855] via-[#62C370] to-[#3185FC]`,
-    memberBackgroundJoy: `rounded-full py-4 px-[4.55rem] bg-gradient-to-r from-[#E84855] via-[#62C370] to-[#3185FC]`,
-    memberDetails: `mt-8 ml-6 space-y-4`,
-    memberDetailsJoy: `mt-8 ml-[1.1rem] space-y-4`,
-    memberName: `text-md md:text-lg`,
+    memberBackground: `h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 sm:px-14 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]`,
+    memberBackgroundJoy: `h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 px-[.28rem] sm:px-[4.3rem] sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]`,
+    memberDetails: `my-6 sm:my-0 sm:mt-8 ml-6 space-y-1 sm:space-y-4`,
+    memberDetailsJoy: `my-6 sm:my-0 sm:mt-8 ml-[1.1rem] space-y-1 sm:space-y-4`,
+    memberName: `text-md md:text-xl`,
     memberTitle: `text-xs md:text-sm`,
-    memberSocials: `flex space-x-4 text-sm md:text-md`,
+    memberSocials: `hidden sm:flex space-x-4 text-sm md:text-md`,
 };
 
 const Team = () => {
@@ -34,7 +34,7 @@ const Team = () => {
                 <div className={style.grid}>
                     <div className={style.gridItem}>
                         <div className={style.memberBackground}>
-                            <Image src={AshKetchum} width={125} height={187.5} />
+                            <Image src={AshKetchum} />
                         </div>
                         <div className={style.memberDetails}>
                             <h1 className={style.memberName}>Ash Ketchum</h1>
@@ -48,7 +48,7 @@ const Team = () => {
                     </div>
                     <div className={style.gridItem}>
                         <div className={style.memberBackground}>
-                            <Image src={ProfessorOak} width={125} height={187.5} />
+                            <Image src={ProfessorOak} />
                         </div>
                         <div className={style.memberDetails}>
                             <h1 className={style.memberName}>Prof. Oak</h1>
@@ -62,7 +62,7 @@ const Team = () => {
                     </div>
                     <div className={style.gridItem}>
                         <div className={style.memberBackground}>
-                            <Image src={Brock} width={125} height={187.5} />
+                            <Image src={Brock} />
                         </div>
                         <div className={style.memberDetails}>
                             <h1 className={style.memberName}>Brock</h1>
@@ -76,7 +76,7 @@ const Team = () => {
                     </div>
                     <div className={style.gridItem}>
                         <div className={style.memberBackground}>
-                            <Image src={Misty} width={125} height={187.5} />
+                            <Image src={Misty} />
                         </div>
                         <div className={style.memberDetails}>
                             <h1 className={style.memberName}>Misty</h1>
@@ -90,7 +90,7 @@ const Team = () => {
                     </div>
                     <div className={style.gridItemJoy}>
                         <div className={style.memberBackgroundJoy}>
-                            <Image src={NurseJoy} width={90} height={187.5} />
+                            <Image src={NurseJoy} />
                         </div>
                         <div className={style.memberDetailsJoy}>
                             <h1 className={style.memberName}>Nurse Joy</h1>
@@ -108,7 +108,7 @@ const Team = () => {
                     </div>
                     <div className={style.gridItem}>
                         <div className={style.memberBackground}>
-                            <Image src={OfficerJenny} width={125} height={187.5} />
+                            <Image src={OfficerJenny} />
                         </div>
                         <div className={style.memberDetails}>
                             <h1 className={style.memberName}>Officer Jenny</h1>

@@ -79,9 +79,11 @@ const Header = ({ title }) => {
                         </ul>
                     </div>
                     <Link href="/">
-                        <div className="items-center flex ml-0 md:ml-2 cursor-pointer transition ease-in-out delay-150 duration-300 hover:scale-110">
-                            <Image src={Pokedex2} height={40} width={40} />
-                            <h1 className="btn btn-ghost normal-case text-xl -ml-2 hover:bg-transparent">
+                        <div className="flex items-center ml-0 md:ml-2 cursor-pointer transition ease-in-out delay-150 duration-300 hover:scale-110">
+                            <div className="h-[2rem] w-[2rem] sm:h-[2.5rem] sm:w-[2.5rem]">
+                                <Image src={Pokedex2} />
+                            </div>
+                            <h1 className="btn btn-ghost normal-case text-lg sm:text-xl -ml-2 hover:bg-transparent">
                                 Pokédex
                             </h1>
                         </div>
