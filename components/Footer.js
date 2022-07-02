@@ -17,9 +17,9 @@ const style = {
     borderSides: `border-t-2 border-transparent w-1/12`,
     borderCenter: `border-t-[1px] border-[#30323D] w-10/12`,
     detailsWrapper: `flex justify-between items-center h-16`,
-    socialIcons: `flex text-sm md:text-md space-x-2 md:space-x-4 shrink w-1/3 justify-center`,
-    centerDetails: `text-center text-xs md:text-sm flex flex-col`,
-    rightDetails: `w-1/3 justify-center flex text-xs md:text-sm`,
+    socialIcons: `flex text-[0.8rem] sm:text-sm md:text-md space-x-2 md:space-x-4 shrink w-1/3 justify-center`,
+    centerDetails: `text-center text-[0.6rem] sm:text-xs md:text-sm flex flex-col`,
+    rightDetails: `w-1/3 justify-center flex text-[0.6rem] sm:text-xs md:text-sm`,
 };
 
 const Footer = () => {
