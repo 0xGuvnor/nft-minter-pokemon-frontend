@@ -4,15 +4,15 @@ import { openseaCollection } from "../constants/urlLinks";
 
 const style = {
     wrapper: `relative bg-fixed bg-repeat bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
-    container: `backdrop-blur-[4px] backdrop-brightness-50`,
-    contentWrapper: `flex min-h-screen w-screen relative justify-center flex-wrap items-center`,
+    container: `backdrop-blur-[4px] backdrop-brightness-50 flex justify-center`,
+    contentWrapper: `lg:-translate-y-8 flex min-h-screen max-w-7xl relative justify-center flex-wrap items-center`,
     copyContainer: `w-1/2 lg:mr-6`,
-    title: `text-5xl font-bold text-white text-center lg:text-left`,
-    description: `text-[#FEE440] text-2xl  rounded-xl px-2 py-4 lg:py-8 mt-2 text-center lg:text-left`,
+    title: `text-4xl md:text-5xl font-bold text-white text-center lg:text-left`,
+    description: `text-[#FEE440] text-md md:text-xl rounded-xl px-2 py-4 lg:py-8 mt-2 text-center lg:text-left`,
     ctaContainer: `flex justify-center lg:justify-start space-x-4`,
-    mintButton: `md:text-md font-bold w-1/3 py-4 px-2 bg-[#04E762] md:rounded-full rounded-lg text-black hover:bg-[#89FC00] hover:text-black transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
-    openseaButton: `md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#576066] md:rounded-full rounded-lg text-white  hover:bg-[#7D8491] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
-    cardContainer: `drop-shadow-2xl`,
+    mintButton: `text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#04E762] md:rounded-full rounded-lg hover:bg-[#89FC00] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
+    openseaButton: `text-sm md:text-md text-center font-bold w-1/3 py-4 px-2 bg-[#576066] md:rounded-full rounded-lg text-white  hover:bg-[#7D8491] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
+    cardContainer: `drop-shadow-2xl h-[28rem] w-[28rem] lg:h-[30rem] lg:w-[30rem] xl:h-[36rem] xl:w-[36rem] -translate-y-16 md:translate-y-0 md:mb-12`,
     imageCard: `rounded-t-3xl`,
     infoContainer: `h-20 bg-black rounded-b-3xl px-6 py-5 flex items-center text-white`,
     avatar: `h-[2.5rem] rounded-full`,
@@ -52,8 +52,6 @@ const Hero = () => {
                         <img
                             className={style.imageCard}
                             src="https://www.pngitem.com/pimgs/m/373-3734017_pokemon-pikachu-hd-png-download.png"
-                            height={500}
-                            width={500}
                         />
                         <div className={style.infoContainer}>
                             <img

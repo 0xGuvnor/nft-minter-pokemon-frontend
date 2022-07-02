@@ -4,11 +4,11 @@ import { discordUrl, etherscanUrl, openseaCollection, twitterUrl } from "../cons
 const style = {
     background: `bg-gradient-to-b from-[#F9EA9A] to-[#f9dc5c]`,
     wrapper: `container mx-auto mb-8 md:w-4/5`,
-    title: `text-5xl text-center underline mb-8`,
+    title: `text-4xl md:text-5xl text-center underline mb-8`,
     grid: `grid grid-cols-2 gap-4`,
     gridContainer: `flex flex-col ml-4 mr-4`,
-    gridTitle: `text-xl mb-2`,
-    gridDescription: `text-justify`,
+    gridTitle: `text-lg md:text-xl mb-2`,
+    gridDescription: `text-justify text-sm md:text-lg`,
 };
 
 const FAQ = () => {

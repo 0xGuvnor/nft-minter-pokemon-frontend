@@ -10,7 +10,7 @@ import emptyPFP from "../assets/emptyPFP.png";
 const style = {
     background: `bg-gradient-to-b from-[#7b7312] to-[#f9dc5c] min-h-screen mb-10`,
     wrapper: `container mx-auto pt-4`,
-    title: `text-5xl text-center underline mb-8 text-white`,
+    title: `text-4xl md:text-5xl text-center underline mb-8 text-white`,
     imageContainer: `flex flex-row justify-center gap-4 drop-shadow-2xl`,
     position1: `-mr-20 ml-20 z-0 2xl:-mr-0 2xl:ml-4`,
     position2: `-mr-11 ml-11 z-10 mt-16 2xl:-mr-0 2xl:ml-4`,
@@ -24,8 +24,8 @@ const style = {
     author: `text-[#00B4D8]`,
     descriptionWrapper: `flex justify-center`,
     descriptionContainer: `flex flex-col md:w-4/5`,
-    description: `mt-12 mx-8 md:mx-0 text-justify text-lg`,
-    rarityDescription: `text-start flex flex-col mx-8 md:mx-0`,
+    description: `mt-12 mx-8 md:mx-0 text-justify text-sm md:text-lg`,
+    rarityDescription: `text-start flex flex-col text-sm md:text-lg mx-8 md:mx-0`,
 };
 
 const About = () => {

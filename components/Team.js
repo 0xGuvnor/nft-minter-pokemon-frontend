@@ -13,17 +13,17 @@ import { SiDiscord } from "react-icons/si";
 const style = {
     background: `bg-gradient-to-t from-[#F9EA9A] to-[#f9dc5c]`,
     wrapper: `container w-8/12 md:w-10/12 xl:w-4/6 2xl:w-4/5 mx-auto shrink`,
-    title: `text-5xl text-center underline mb-4`,
+    title: `text-4xl md:text-5xl text-center underline mb-4`,
     grid: `grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 2xl:grid-cols-3 lg:grid-rows-2`,
     gridItem: `my-4 flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,
     gridItemJoy: `my-4 ml-[0.7rem] flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,
     memberBackground: `rounded-full py-4 px-14 bg-gradient-to-r from-[#E84855] via-[#62C370] to-[#3185FC]`,
-    memberBackgroundJoy: `rounded-full py-4 px-[4.7rem] bg-gradient-to-r from-[#E84855] via-[#62C370] to-[#3185FC]`,
+    memberBackgroundJoy: `rounded-full py-4 px-[4.55rem] bg-gradient-to-r from-[#E84855] via-[#62C370] to-[#3185FC]`,
     memberDetails: `mt-8 ml-6 space-y-4`,
     memberDetailsJoy: `mt-8 ml-[1.1rem] space-y-4`,
-    memberName: `text-lg`,
-    memberTitle: `text-sm`,
-    memberSocials: `flex space-x-4 text-md`,
+    memberName: `text-md md:text-lg`,
+    memberTitle: `text-xs md:text-sm`,
+    memberSocials: `flex space-x-4 text-sm md:text-md`,
 };
 
 const Team = () => {
