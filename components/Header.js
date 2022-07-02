@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
 import Image from "next/image";
 import Pokedex2 from "../assets/Pokedex2.webp";
+import { useAccount } from "wagmi";
+import toast from "react-hot-toast";
 
 const Header = () => {
+    const { isConnected, isDisconnected } = useAccount();
+
     const [aboutActive, setAboutActive] = useState("");
+    const [disconnected, setDisconnected] = useState(false);
+
+    const toastWelcome = () => toast("Welcome!", { icon: "🥳", position: "top-center" });
+
+    useEffect(() => {
+        if (isDisconnected) {
+            setDisconnected(true);
+        }
+        /* this condition makes sure the toast is only shown once at login */
+        if (disconnected && isConnected) {
+            toastWelcome();
+        }
+    }, [isDisconnected, isConnected]);
 
     return (
         <div className="navbar bg-[#0F1108] text-white">

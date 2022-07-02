@@ -11,6 +11,7 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
+import { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
@@ -51,6 +52,14 @@ function MyApp({ Component, pageProps }) {
                 })}
                 showRecentTransactions={true}
             >
+                <Toaster
+                    position="top-right"
+                    toastOptions={{
+                        className: "",
+                        duration: 5000,
+                        style: { background: "#FDFCDC", color: "#2B2D42" },
+                    }}
+                />
                 <Component {...pageProps} />
                 <Footer />
             </RainbowKitProvider>

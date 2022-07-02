@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useContract, useContractRead, useProvider, useSigner, useNetwork } from "wagmi";
 import Pokeballs from "../assets/Pokeballs.webp";
 import networkMapping from "../constants/networkMapping.json";
@@ -26,7 +27,7 @@ const MintCard = () => {
     const [mintAmount, setMintAmount] = useState(1);
     const [mintFee, setMintFee] = useState(0);
     const [pokedexAddress, setPokedexAddress] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    const [isMining, setisMining] = useState(false);
 
     const { data: mintFeePer } = useContractRead({
         addressOrName: pokedexAddress,
@@ -40,19 +41,109 @@ const MintCard = () => {
         signerOrProvider: signer || provider,
     });
 
-    console.log(status, signer);
+    // console.log(status, signer);
+
+    const toastMintLoading = (txHash) =>
+        toast.loading(
+            (t) => (
+                <div className="flex min-w-fit">
+                    <div className="flex flex-col min-w-fit pr-4">
+                        <h1 className="text-md">Transaction is being mined...</h1>
+                        <p className="text-sm">Transaction hash:</p>
+                        <a
+                            href={`https://rinkeby.etherscan.io/tx/${txHash}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <p className="text-sm text-indigo-500 underline text-clip overflow-hidden">
+                                {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
+                            </p>
+                        </a>
+                    </div>
+                    <div className="flex border-l-4">
+                        <button
+                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            onClick={() => toast.dismiss(t.id)}
+                        >
+                            Dismiss
+                        </button>
+                    </div>
+                </div>
+            ),
+            { icon: "⛏" }
+        );
+
+    const toastMintSuccess = (txHash) =>
+        toast.success(
+            (t) => (
+                <div className="flex min-w-fit">
+                    <div className="flex flex-col min-w-fit pr-4">
+                        <h1 className="text-md">Transaction completed!</h1>
+                        <p className="text-sm">Transaction hash:</p>
+                        <a
+                            href={`https://rinkeby.etherscan.io/tx/${txHash}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <p className="text-sm text-indigo-500 underline text-clip overflow-hidden">
+                                {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
+                            </p>
+                        </a>
+                    </div>
+                    <div className="flex border-l-4">
+                        <button
+                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            onClick={() => toast.dismiss(t.id)}
+                        >
+                            Dismiss
+                        </button>
+                    </div>
+                </div>
+            ),
+            { icon: "🎉" }
+        );
+
+    const toastError = (message) =>
+        toast.error(
+            (t) => (
+                <div className="flex min-w-full">
+                    <div className=" pr-4 text-md">{message}</div>
+                    <div className="flex border-l-4">
+                        <button
+                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            onClick={() => toast.dismiss(t.id)}
+                        >
+                            Dismiss
+                        </button>
+                    </div>
+                </div>
+            ),
+            { icon: "❌" }
+        );
 
     const mintNFT = async () => {
+        let txReceipt;
+        setisMining(true);
+
         try {
             const tx = await pokedexContract.requestMint(mintAmount, {
                 value: ethers.utils.parseEther(mintFee.toString()),
             });
-            setIsLoading(true);
-            await tx.wait(1);
+            toastMintLoading(tx.hash);
+            txReceipt = await tx.wait();
         } catch (err) {
             console.log(err);
+            if (err.code == 4001) {
+                toastError(err.message);
+            } else {
+                toastError("Hmm looks like something went wrong...");
+            }
         }
-        setIsLoading(false);
+
+        setisMining(false);
+        if (txReceipt) {
+            toastMintSuccess(txReceipt.transactionHash);
+        }
     };
 
     useEffect(() => {
@@ -94,10 +185,10 @@ const MintCard = () => {
                         +
                     </button>
                 </div>
-                {isLoading ? (
+                {isMining ? (
                     <button className={style.loadingButton}>Loading</button>
                 ) : (
-                    <button className={style.mintButton} onClick={mintNFT} disabled={isLoading}>
+                    <button className={style.mintButton} onClick={mintNFT} disabled={isMining}>
                         Mint
                     </button>
                 )}
