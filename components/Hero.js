@@ -6,7 +6,7 @@ const style = {
     wrapper: `relative bg-fixed bg-repeat bg-[length:160px_80px] bg-[url('https://images6.fanpop.com/image/photos/40000000/pikachu-wallpaper-HD-Free-Cute-Pikachu-Wallpapers-HD-roleplay-universe-40093220-1920-1080.jpg')]`,
     container: `backdrop-blur-[4px] backdrop-brightness-50 flex justify-center`,
     contentWrapper: `lg:-translate-y-8 flex min-h-screen max-w-7xl relative justify-center flex-wrap items-center`,
-    copyContainer: `w-1/2 lg:mr-6`,
+    copyContainer: `w-1/2 lg:mr-6 -mt-12 sm:mt-0`,
     title: `text-4xl md:text-5xl font-bold text-white text-center md:mt-4 lg:text-left`,
     description: `text-[#FEE440] text-md md:text-xl rounded-xl px-2 py-4 lg:py-8 mt-2 text-center lg:text-left`,
     ctaContainer: `flex justify-center lg:justify-start space-x-4 md:mb-4`,
