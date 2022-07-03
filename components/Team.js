@@ -17,8 +17,8 @@ const style = {
     grid: `grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 2xl:grid-cols-3 lg:grid-rows-2`,
     gridItem: `my-4 flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,
     gridItemJoy: `my-4 ml-[0.7rem] flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,
-    memberBackground: `h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 sm:px-14 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]`,
-    memberBackgroundJoy: `h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 px-[.28rem] sm:px-[4.3rem] sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]`,
+    memberBackground: `h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] ml-8 sm:ml-0 rounded-full sm:py-4 sm:px-14 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]`,
+    memberBackgroundJoy: `h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] ml-8 sm:ml-0 rounded-full sm:py-4 px-[.28rem] sm:px-[4.3rem] sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]`,
     memberDetails: `my-6 sm:my-0 sm:mt-8 ml-6 space-y-1 sm:space-y-4`,
     memberDetailsJoy: `my-6 sm:my-0 sm:mt-8 ml-[1.1rem] space-y-1 sm:space-y-4`,
     memberName: `text-md md:text-xl`,
@@ -33,7 +33,7 @@ const Team = () => {
                 <h1 className={style.title}>The Team</h1>
                 <div className={style.grid}>
                     <div className={style.gridItem}>
-                        <div className="h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 sm:px-14 mt-2 sm:mt-0 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]">
+                        <div className="h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] ml-8 sm:ml-0 rounded-full sm:py-4 sm:px-14 mt-2 sm:mt-0 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]">
                             <Image src={AshKetchum} />
                         </div>
                         <div className={style.memberDetails}>
@@ -107,7 +107,7 @@ const Team = () => {
                         </div>
                     </div>
                     <div className={style.gridItem}>
-                        <div className="h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] rounded-full sm:py-4 sm:px-14 mt-4 sm:mt-0 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]">
+                        <div className="h-[3rem] w-[3rem] sm:h-[13rem] sm:w-[13rem] ml-8 sm:ml-0 rounded-full sm:py-4 sm:px-14 mt-4 sm:mt-0 sm:bg-gradient-to-r sm:from-[#E84855] sm:via-[#62C370] sm:to-[#3185FC]">
                             <Image src={OfficerJenny} />
                         </div>
                         <div className={style.memberDetails}>
