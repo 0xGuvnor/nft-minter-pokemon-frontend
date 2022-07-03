@@ -67,8 +67,6 @@ const MintCard = () => {
         },
     });
 
-    // console.log(waitForMint);
-
     const toastMintLoading = (txHash) =>
         toast.loading(
             (t) => (
