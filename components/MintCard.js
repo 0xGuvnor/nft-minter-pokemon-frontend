@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useContract, useContractRead, useProvider, useSigner, useNetwork } from "wagmi";
+import { useContractRead, useNetwork, useContractWrite, useWaitForTransaction } from "wagmi";
 import Pokeballs from "../assets/Pokeballs.webp";
 import networkMapping from "../constants/networkMapping.json";
 import PokedexABI from "../constants/Pokedex.json";
@@ -21,8 +21,6 @@ const style = {
 
 const MintCard = () => {
     const { chain } = useNetwork();
-    const provider = useProvider();
-    const { data: signer, status } = useSigner();
 
     const [mintAmount, setMintAmount] = useState(1);
     const [mintFee, setMintFee] = useState(0);
@@ -35,13 +33,41 @@ const MintCard = () => {
         functionName: "mintFee",
     });
 
-    const pokedexContract = useContract({
+    const callMint = useContractWrite({
         addressOrName: pokedexAddress,
         contractInterface: PokedexABI,
-        signerOrProvider: signer || provider,
+        functionName: "requestMint",
+        args: [mintAmount],
+        overrides: { value: ethers.utils.parseEther(mintFee.toString()) },
+        onSuccess(tx) {
+            toastMintLoading(tx.hash);
+        },
+        onError(error) {
+            console.log(error);
+            setisMining(false);
+            if (error.code == 4001) {
+                toastError(error.message);
+            } else {
+                toastError("Hmm looks like something went wrong...");
+            }
+        },
     });
 
-    // console.log(status, signer);
+    useWaitForTransaction({
+        hash: callMint.data?.hash,
+        staleTime: 60_000,
+        onSuccess(tx) {
+            setisMining(false);
+            toastMintSuccess(tx.transactionHash);
+        },
+        onError(error) {
+            setisMining(false);
+            toastError(error.message);
+            console.log(error);
+        },
+    });
+
+    // console.log(waitForMint);
 
     const toastMintLoading = (txHash) =>
         toast.loading(
@@ -121,43 +147,19 @@ const MintCard = () => {
             { icon: "❌" }
         );
 
-    const mintNFT = async () => {
-        let txReceipt;
-        setisMining(true);
-
-        try {
-            const tx = await pokedexContract.requestMint(mintAmount, {
-                value: ethers.utils.parseEther(mintFee.toString()),
-            });
-            toastMintLoading(tx.hash);
-            txReceipt = await tx.wait();
-        } catch (err) {
-            console.log(err);
-            if (err.code == 4001) {
-                toastError(err.message);
-            } else {
-                toastError("Hmm looks like something went wrong...");
-            }
-        }
-
-        setisMining(false);
-        if (txReceipt) {
-            toastMintSuccess(txReceipt.transactionHash);
-        }
-    };
-
     useEffect(() => {
         if (mintFeePer) {
             setMintFee(ethers.utils.formatEther(mintFeePer.mul(mintAmount)));
         }
 
-        if (chain.id) {
+        if (chain?.id) {
             setPokedexAddress(networkMapping[chain.id].Pokedex[0]);
         }
 
-        if (!signer) {
+        if (callMint.isLoading) {
+            setisMining(true);
         }
-    }, [mintAmount, mintFeePer, chain, signer]);
+    }, [mintAmount, mintFeePer, chain, callMint.isLoading]);
 
     const handleDecrement = () => {
         if (mintAmount <= 1) return;
@@ -188,7 +190,11 @@ const MintCard = () => {
                 {isMining ? (
                     <button className={style.loadingButton}>Loading</button>
                 ) : (
-                    <button className={style.mintButton} onClick={mintNFT} disabled={isMining}>
+                    <button
+                        className={style.mintButton}
+                        onClick={() => callMint.write()}
+                        disabled={isMining}
+                    >
                         Mint
                     </button>
                 )}

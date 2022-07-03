@@ -60,7 +60,7 @@ const MintStats = () => {
     });
 
     useEffect(() => {
-        if (chain.id) {
+        if (chain?.id) {
             setPokedexAddress(networkMapping[chain.id].Pokedex[0]);
         }
         if (tokenStats && tokenStats.length > 1) {
