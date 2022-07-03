@@ -45,7 +45,7 @@ const Header = ({ title }) => {
                         <label tabIndex="0" className="btn btn-ghost md:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="w-5 h-5"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -79,17 +79,17 @@ const Header = ({ title }) => {
                         </ul>
                     </div>
                     <Link href="/">
-                        <div className="flex items-center ml-0 md:ml-2 cursor-pointer transition ease-in-out delay-150 duration-300 hover:scale-110">
+                        <div className="flex items-center ml-0 transition duration-300 ease-in-out delay-150 cursor-pointer md:ml-2 hover:scale-110">
                             <div className="h-[2rem] w-[2rem] sm:h-[2.5rem] sm:w-[2.5rem]">
                                 <Image src={Pokedex2} />
                             </div>
-                            <h1 className="btn btn-ghost normal-case text-lg sm:text-xl -ml-2 hover:bg-transparent">
+                            <h1 className="-ml-2 text-lg normal-case btn btn-ghost sm:text-xl hover:bg-transparent">
                                 Pokédex
                             </h1>
                         </div>
                     </Link>
                 </div>
-                <div className="navbar-center hidden md:flex">
+                <div className="hidden navbar-center md:flex">
                     <div className="tabs lg:space-x-8">
                         <a
                             className={`tab tab-bordered ${aboutActive} hover:tab-active text-[16px] text-white`}
