@@ -2,10 +2,18 @@ import { ethers } from "ethers";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useContractRead, useNetwork, useContractWrite, useWaitForTransaction } from "wagmi";
+import {
+    useContractRead,
+    useNetwork,
+    useContractWrite,
+    useWaitForTransaction,
+    useContractEvent,
+    useAccount,
+} from "wagmi";
 import Pokeballs from "../assets/Pokeballs.webp";
 import networkMapping from "../constants/networkMapping.json";
 import PokedexABI from "../constants/Pokedex.json";
+import { openseaCollection } from "../constants/urlLinks";
 
 const style = {
     container: `flex justify-center items-center z-10`,
@@ -21,6 +29,7 @@ const style = {
 
 const MintCard = () => {
     const { chain } = useNetwork();
+    const { address } = useAccount();
 
     const [mintAmount, setMintAmount] = useState(1);
     const [mintFee, setMintFee] = useState(0);
@@ -66,6 +75,43 @@ const MintCard = () => {
             console.log(error);
         },
     });
+
+    useContractEvent({
+        addressOrName: pokedexAddress,
+        contractInterface: PokedexABI,
+        eventName: "Transfer",
+        listener: (event) => {
+            if (event[0] == "0x0000000000000000000000000000000000000000" && event[1] == address) {
+                toastNftMinted();
+            }
+        },
+    });
+
+    const toastNftMinted = () =>
+        toast.success(
+            (t) => (
+                <div className="flex min-w-fit">
+                    <div className="flex flex-col min-w-fit pr-4">
+                        <h1 className="text-md">Your Pokémon has been minted!</h1>
+                        <p className="text-sm">View your NFT @</p>
+                        <a href={openseaCollection} target="_blank" rel="noopener noreferrer">
+                            <p className="text-sm text-indigo-500 underline text-clip overflow-hidden">
+                                the Pokédex Collection
+                            </p>
+                        </a>
+                    </div>
+                    <div className="flex border-l-4">
+                        <button
+                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            onClick={() => toast.dismiss(t.id)}
+                        >
+                            Dismiss
+                        </button>
+                    </div>
+                </div>
+            ),
+            { icon: "🎉" }
+        );
 
     const toastMintLoading = (txHash) =>
         toast.loading(
@@ -124,7 +170,7 @@ const MintCard = () => {
                     </div>
                 </div>
             ),
-            { icon: "🎉" }
+            { icon: "✅" }
         );
 
     const toastError = (message) =>
@@ -145,6 +191,16 @@ const MintCard = () => {
             { icon: "❌" }
         );
 
+    const handleDecrement = () => {
+        if (mintAmount <= 1) return;
+        setMintAmount(mintAmount - 1);
+    };
+
+    const handleIncrement = () => {
+        if (mintAmount >= 10) return;
+        setMintAmount(mintAmount + 1);
+    };
+
     useEffect(() => {
         if (mintFeePer) {
             setMintFee(ethers.utils.formatEther(mintFeePer.mul(mintAmount)));
@@ -158,16 +214,6 @@ const MintCard = () => {
             setisMining(true);
         }
     }, [mintAmount, mintFeePer, chain, callMint.isLoading]);
-
-    const handleDecrement = () => {
-        if (mintAmount <= 1) return;
-        setMintAmount(mintAmount - 1);
-    };
-
-    const handleIncrement = () => {
-        if (mintAmount >= 10) return;
-        setMintAmount(mintAmount + 1);
-    };
 
     return (
         <div className={style.container}>
