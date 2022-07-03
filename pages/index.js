@@ -12,16 +12,16 @@ const style = {
 
 export default function Home() {
     return (
-        <FadeIn>
-            <div className={style.wrapper}>
-                <Header title={"Home"} />
+        <div className={style.wrapper}>
+            <Header title={"Home"} />
+            <FadeIn>
                 <Hero />
                 <div className="snap-always snap-center">
                     <About />
                 </div>
                 <Team />
                 <FAQ />
-            </div>
-        </FadeIn>
+            </FadeIn>
+        </div>
     );
 }
