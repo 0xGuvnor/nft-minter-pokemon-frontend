@@ -15,7 +15,6 @@ const Header = ({ title }) => {
     const [faqActive, setFaqActive] = useState("");
     const [mintActive, setMintActive] = useState("");
     const [disconnected, setDisconnected] = useState(false);
-    const [showDropdown, setShowDropdown] = useState("hidden");
 
     const toastWelcome = () => toast("Welcome!", { icon: "🥳", position: "top-center" });
 
@@ -43,13 +42,7 @@ const Header = ({ title }) => {
             <div className="navbar bg-[#0F1108] text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <label
-                            tabIndex="0"
-                            className="btn btn-ghost md:hidden"
-                            onClick={() =>
-                                showDropdown ? setShowDropdown("") : setShowDropdown("hidden")
-                            }
-                        >
+                        <label tabIndex="0" className="btn btn-circle btn-ghost md:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="w-5 h-5"
@@ -65,33 +58,31 @@ const Header = ({ title }) => {
                                 />
                             </svg>
                         </label>
-                        <div className={showDropdown}>
-                            <ul
-                                tabIndex="0"
-                                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#0F1108] rounded-box w-52"
-                            >
-                                <li className="hover-bordered">
-                                    <Link href="/#about">
-                                        <a onClick={() => setShowDropdown("hidden")}>About</a>
-                                    </Link>
-                                </li>
-                                <li className="hover-bordered">
-                                    <Link href="/#team">
-                                        <a onClick={() => setShowDropdown("hidden")}>Team</a>
-                                    </Link>
-                                </li>
-                                <li className="hover-bordered">
-                                    <Link href="/#faq">
-                                        <a onClick={() => setShowDropdown("hidden")}>FAQ</a>
-                                    </Link>
-                                </li>
-                                <li className="hover-bordered">
-                                    <Link href="/mint">
-                                        <a onClick={() => setShowDropdown("hidden")}>Mint</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul
+                            tabIndex="0"
+                            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#0F1108] rounded-box w-52"
+                        >
+                            <li className="hover-bordered">
+                                <Link href="/#about">
+                                    <a>About</a>
+                                </Link>
+                            </li>
+                            <li className="hover-bordered">
+                                <Link href="/#team">
+                                    <a>Team</a>
+                                </Link>
+                            </li>
+                            <li className="hover-bordered">
+                                <Link href="/#faq">
+                                    <a>FAQ</a>
+                                </Link>
+                            </li>
+                            <li className="hover-bordered">
+                                <Link href="/mint">
+                                    <a>Mint</a>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                     <Link href="/">
                         <div className="flex items-center ml-0 transition duration-300 ease-in-out delay-150 cursor-pointer md:ml-2 hover:scale-110">
