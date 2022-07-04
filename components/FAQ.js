@@ -52,11 +52,28 @@ const FAQ = () => {
                         </p>
                     </div>
                     <div className={style.gridContainer}>
-                        <h1 className={style.gridTitle}>What can I do with my Pokémon?</h1>
+                        <h1 className={style.gridTitle}>What happens after I mint a Pokémon?</h1>
                         <p className={style.gridDescription}>
-                            Create and mint derivatives. Use it as your PFP on social media. Buy a
-                            Billboard Space! Create a brand using your Pokémon! Create merch!
-                            Basically you can do anything you can dream up!
+                            Wait 2-5 minutes for the Chainlink nodes to respond with the random
+                            numbers needed to choose which Pokémon belongs to you! You will know
+                            that the process has been completed when a notification appears with a
+                            link to view your newly minted Pokémon on OpenSea.
+                        </p>
+                    </div>
+                    <div className={style.gridContainer}>
+                        <h1 className={style.gridTitle}>
+                            Why does my NFT show a picture of an egg?
+                        </h1>
+                        <p className={style.gridDescription}>
+                            Just like in the game, your Pokémon needs time to incubate before
+                            hatching. Come back after a few hours, or the next day, and see which
+                            Pokémon awaits you.
+                            <br />
+                            <br />
+                            For the technically inclined, you can find out what Pokémon you have by
+                            passing the Token ID into the tokenIdToPokemon function in the contract.
+                            As an example, if you'd gotten Bulbasaur, it will return values of "0"
+                            for both the "generation" and "id" fields.
                         </p>
                     </div>
                     <div className={style.gridContainer}>
