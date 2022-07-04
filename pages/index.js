@@ -64,7 +64,7 @@ export default function Home() {
     }, [chain]);
 
     return (
-        <div className={style.wrapper}>
+        <div>
             <Header title={"Home"} />
             <FadeIn>
                 <Hero />
