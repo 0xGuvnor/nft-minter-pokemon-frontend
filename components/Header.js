@@ -41,7 +41,7 @@ const Header = ({ title }) => {
 
             <div className="navbar bg-[#0F1108] text-white">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown dropdown-hover">
                         <label tabIndex="0" className="btn btn-ghost md:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
