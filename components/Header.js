@@ -46,7 +46,9 @@ const Header = ({ title }) => {
                         <label
                             tabIndex="0"
                             className="btn btn-ghost md:hidden"
-                            onClick={() => setShowDropdown("")}
+                            onClick={() =>
+                                showDropdown ? setShowDropdown("") : setShowDropdown("hidden")
+                            }
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
