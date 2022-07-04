@@ -15,7 +15,7 @@ const Header = ({ title }) => {
     const [faqActive, setFaqActive] = useState("");
     const [mintActive, setMintActive] = useState("");
     const [disconnected, setDisconnected] = useState(false);
-    const [showDropdown, setShowDropdown] = useState("");
+    const [showDropdown, setShowDropdown] = useState("hidden");
 
     const toastWelcome = () => toast("Welcome!", { icon: "🥳", position: "top-center" });
 
