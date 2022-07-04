@@ -26,7 +26,7 @@ export default function Home() {
         eventName: "Transfer",
         listener: (event) => {
             if (event[0] == "0x0000000000000000000000000000000000000000" && event[1] == address) {
-                toastNftMinted(event[3].args[2].toString());
+                toastNftMinted(event[3].args[2].toString() /* token ID */);
             }
         },
     });
