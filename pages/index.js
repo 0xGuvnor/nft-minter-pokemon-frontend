@@ -9,6 +9,7 @@ import PokedexABI from "../constants/Pokedex.json";
 import networkMapping from "../constants/networkMapping.json";
 import { useEffect, useState } from "react";
 import { useAccount, useContractEvent, useNetwork } from "wagmi";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Home() {
     const { chain } = useNetwork();
@@ -67,6 +68,7 @@ export default function Home() {
         <div>
             <Header title={"Home"} />
             <FadeIn>
+                <ScrollToTop />
                 <Hero />
                 <div id="about">
                     <About />

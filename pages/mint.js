@@ -28,12 +28,12 @@ const Mint = () => {
                         <MintCard />
                     </div>
                 ) : (
-                    <div className="min-h-screen flex justify-center items-center">
-                        <div className="alert alert-error shadow-lg w-2/3 -translate-y-24">
+                    <div className="flex items-center justify-center min-h-screen">
+                        <div className="w-2/3 -translate-y-24 shadow-lg alert alert-error">
                             <div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="stroke-current flex-shrink-0 h-6 w-6"
+                                    className="flex-shrink-0 w-6 h-6 stroke-current"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                 >
