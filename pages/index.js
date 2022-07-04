@@ -10,10 +10,6 @@ import networkMapping from "../constants/networkMapping.json";
 import { useEffect, useState } from "react";
 import { useAccount, useContractEvent, useNetwork } from "wagmi";
 
-const style = {
-    wrapper: `snap-mandatory snap-y`,
-};
-
 export default function Home() {
     const { chain } = useNetwork();
     const { address } = useAccount();
@@ -72,11 +68,15 @@ export default function Home() {
             <Header title={"Home"} />
             <FadeIn>
                 <Hero />
-                <div className="snap-always snap-center">
+                <div id="about">
                     <About />
                 </div>
-                <Team />
-                <FAQ />
+                <div id="team">
+                    <Team />
+                </div>
+                <div id="faq">
+                    <FAQ />
+                </div>
             </FadeIn>
         </div>
     );

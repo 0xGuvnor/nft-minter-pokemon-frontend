@@ -12,7 +12,7 @@ import { SiDiscord } from "react-icons/si";
 
 const style = {
     background: `bg-gradient-to-t from-[#F9EA9A] to-[#f9dc5c]`,
-    wrapper: `container w-8/12 md:w-10/12 xl:w-4/6 2xl:w-4/5 mx-auto shrink`,
+    wrapper: `container w-8/12 md:w-10/12 xl:w-4/6 2xl:w-4/5 mx-auto shrink pt-4`,
     title: `text-4xl md:text-5xl text-center underline mb-4`,
     grid: `grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 2xl:grid-cols-3 lg:grid-rows-2`,
     gridItem: `my-4 flex rounded-full mx-2 justify-start bg-[#F2F3AE]`,

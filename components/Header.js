@@ -63,13 +63,19 @@ const Header = ({ title }) => {
                             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#0F1108] rounded-box w-52"
                         >
                             <li className="hover-bordered">
-                                <a>About</a>
+                                <Link href="/#about">
+                                    <a>About</a>
+                                </Link>
                             </li>
                             <li className="hover-bordered">
-                                <a>Team</a>
+                                <Link href="/#team">
+                                    <a>Team</a>
+                                </Link>
                             </li>
                             <li className="hover-bordered">
-                                <a>FAQ</a>
+                                <Link href="/#faq">
+                                    <a>FAQ</a>
+                                </Link>
                             </li>
                             <li className="hover-bordered">
                                 <Link href="/mint">
@@ -91,39 +97,45 @@ const Header = ({ title }) => {
                 </div>
                 <div className="hidden navbar-center md:flex">
                     <div className="tabs lg:space-x-8">
-                        <a
-                            className={`tab tab-bordered ${aboutActive} hover:tab-active text-[16px] text-white`}
-                            onClick={() => {
-                                setAboutActive("tab-active");
-                                setTeamActive("");
-                                setFaqActive("");
-                                setMintActive("");
-                            }}
-                        >
-                            About
-                        </a>
-                        <a
-                            className={`tab tab-bordered ${teamActive} hover:tab-active text-[16px] text-white`}
-                            onClick={() => {
-                                setAboutActive("");
-                                setTeamActive("tab-active");
-                                setFaqActive("");
-                                setMintActive("");
-                            }}
-                        >
-                            Team
-                        </a>
-                        <a
-                            className={`tab tab-bordered ${faqActive} hover:tab-active text-[16px] text-white`}
-                            onClick={() => {
-                                setAboutActive("");
-                                setTeamActive("");
-                                setFaqActive("tab-active");
-                                setMintActive("");
-                            }}
-                        >
-                            FAQ
-                        </a>
+                        <Link href="/#about">
+                            <a
+                                className={`tab tab-bordered ${aboutActive} hover:tab-active text-[16px] text-white`}
+                                onClick={() => {
+                                    setAboutActive("tab-active");
+                                    setTeamActive("");
+                                    setFaqActive("");
+                                    setMintActive("");
+                                }}
+                            >
+                                About
+                            </a>
+                        </Link>
+                        <Link href="/#team">
+                            <a
+                                className={`tab tab-bordered ${teamActive} hover:tab-active text-[16px] text-white`}
+                                onClick={() => {
+                                    setAboutActive("");
+                                    setTeamActive("tab-active");
+                                    setFaqActive("");
+                                    setMintActive("");
+                                }}
+                            >
+                                Team
+                            </a>
+                        </Link>
+                        <Link href="/#faq">
+                            <a
+                                className={`tab tab-bordered ${faqActive} hover:tab-active text-[16px] text-white`}
+                                onClick={() => {
+                                    setAboutActive("");
+                                    setTeamActive("");
+                                    setFaqActive("tab-active");
+                                    setMintActive("");
+                                }}
+                            >
+                                FAQ
+                            </a>
+                        </Link>
                         <Link href="/mint">
                             <a
                                 className={`tab tab-bordered ${mintActive} hover:tab-active text-[16px] text-white`}

@@ -3,7 +3,7 @@ import { discordUrl, etherscanUrl, openseaCollection, twitterUrl } from "../cons
 
 const style = {
     background: `bg-gradient-to-b from-[#F9EA9A] to-[#f9dc5c]`,
-    wrapper: `container mx-auto mb-8 md:w-4/5`,
+    wrapper: `container mx-auto mb-8 md:w-4/5 pt-4`,
     title: `text-4xl md:text-5xl text-center underline mb-8`,
     grid: `grid grid-cols-2`,
     gridContainer: `flex flex-col mx-4`,
