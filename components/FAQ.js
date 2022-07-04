@@ -72,8 +72,9 @@ const FAQ = () => {
                             <br />
                             For the technically inclined, you can find out what Pokémon you have by
                             passing the Token ID into the tokenIdToPokemon function in the contract.
-                            As an example, if you'd gotten Bulbasaur, it will return values of "0"
-                            for both the "generation" and "id" fields.
+                            For example, if you&apos;d gotten Bulbasaur, it will return values of
+                            &quot;0&quot; for both the &quot;generation&quot; and &quot;id&quot;
+                            fields.
                         </p>
                     </div>
                     <div className={style.gridContainer}>
