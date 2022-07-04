@@ -91,18 +91,22 @@ const MintCard = () => {
         toast.success(
             (t) => (
                 <div className="flex min-w-fit">
-                    <div className="flex flex-col min-w-fit pr-4">
+                    <div className="flex flex-col pr-4 min-w-fit">
                         <h1 className="text-md">Your Pokémon has been minted!</h1>
                         <p className="text-sm">View your NFT @</p>
-                        <a href={openseaCollection} target="_blank" rel="noopener noreferrer">
-                            <p className="text-sm text-indigo-500 underline text-clip overflow-hidden">
-                                the Pokédex Collection
+                        <a
+                            href={`https://testnets.opensea.io/${address}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <p className="overflow-hidden text-sm text-indigo-500 underline text-clip">
+                                OpenSea
                             </p>
                         </a>
                     </div>
                     <div className="flex border-l-4">
                         <button
-                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            className="w-full pl-4 text-sm text-indigo-500 hover:text-indigo-600"
                             onClick={() => toast.dismiss(t.id)}
                         >
                             Dismiss
@@ -117,7 +121,7 @@ const MintCard = () => {
         toast.loading(
             (t) => (
                 <div className="flex min-w-fit">
-                    <div className="flex flex-col min-w-fit pr-4">
+                    <div className="flex flex-col pr-4 min-w-fit">
                         <h1 className="text-md">Transaction is being mined...</h1>
                         <p className="text-sm">Transaction hash:</p>
                         <a
@@ -125,14 +129,14 @@ const MintCard = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <p className="text-sm text-indigo-500 underline text-clip overflow-hidden">
+                            <p className="overflow-hidden text-sm text-indigo-500 underline text-clip">
                                 {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
                             </p>
                         </a>
                     </div>
                     <div className="flex border-l-4">
                         <button
-                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            className="w-full pl-4 text-sm text-indigo-500 hover:text-indigo-600"
                             onClick={() => toast.dismiss(t.id)}
                         >
                             Dismiss
@@ -147,7 +151,7 @@ const MintCard = () => {
         toast.success(
             (t) => (
                 <div className="flex min-w-fit">
-                    <div className="flex flex-col min-w-fit pr-4">
+                    <div className="flex flex-col pr-4 min-w-fit">
                         <h1 className="text-md">Transaction completed!</h1>
                         <p className="text-sm">Transaction hash:</p>
                         <a
@@ -155,14 +159,14 @@ const MintCard = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <p className="text-sm text-indigo-500 underline text-clip overflow-hidden">
+                            <p className="overflow-hidden text-sm text-indigo-500 underline text-clip">
                                 {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
                             </p>
                         </a>
                     </div>
                     <div className="flex border-l-4">
                         <button
-                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            className="w-full pl-4 text-sm text-indigo-500 hover:text-indigo-600"
                             onClick={() => toast.dismiss(t.id)}
                         >
                             Dismiss
@@ -177,10 +181,10 @@ const MintCard = () => {
         toast.error(
             (t) => (
                 <div className="flex min-w-full">
-                    <div className=" pr-4 text-md">{message}</div>
+                    <div className="pr-4 text-md">{message}</div>
                     <div className="flex border-l-4">
                         <button
-                            className="text-sm w-full pl-4 text-indigo-500 hover:text-indigo-600"
+                            className="w-full pl-4 text-sm text-indigo-500 hover:text-indigo-600"
                             onClick={() => toast.dismiss(t.id)}
                         >
                             Dismiss
