@@ -13,7 +13,6 @@ import {
 import Pokeballs from "../assets/Pokeballs.webp";
 import networkMapping from "../constants/networkMapping.json";
 import PokedexABI from "../constants/Pokedex.json";
-import { openseaCollection } from "../constants/urlLinks";
 
 const style = {
     container: `flex justify-center items-center z-10`,
@@ -82,12 +81,12 @@ const MintCard = () => {
         eventName: "Transfer",
         listener: (event) => {
             if (event[0] == "0x0000000000000000000000000000000000000000" && event[1] == address) {
-                toastNftMinted();
+                toastNftMinted(event[3].args[2].toString());
             }
         },
     });
 
-    const toastNftMinted = () =>
+    const toastNftMinted = (tokenId) =>
         toast.success(
             (t) => (
                 <div className="flex min-w-fit">
@@ -95,7 +94,7 @@ const MintCard = () => {
                         <h1 className="text-md">Your Pokémon has been minted!</h1>
                         <p className="text-sm">View your NFT @</p>
                         <a
-                            href={`https://testnets.opensea.io/${address}`}
+                            href={`https://testnets.opensea.io/assets/${chain.network}/${pokedexAddress}/${tokenId}`}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
