@@ -91,6 +91,10 @@ const SubmitTxCard = () => {
                             </option>
                             <option>Pause/Unpause Minting</option>
                             <option>Withdraw ETH</option>
+                            <option>Grant Pauser Role</option>
+                            <option>Revoke Pauser Role</option>
+                            <option>Grant URI Assigner Role</option>
+                            <option>Revoke URI Assigner Role</option>
                             <option>Advanced</option>
                         </select>
                     </div>
