@@ -14,6 +14,7 @@ const Header = ({ title }) => {
     const [teamActive, setTeamActive] = useState("");
     const [faqActive, setFaqActive] = useState("");
     const [mintActive, setMintActive] = useState("");
+    const [adminActive, setAdminActive] = useState("");
     const [disconnected, setDisconnected] = useState(false);
 
     const toastWelcome = () => toast("Welcome!", { icon: "🥳", position: "top-center" });
@@ -28,6 +29,9 @@ const Header = ({ title }) => {
         }
         if (title == "Mint") {
             setMintActive("tab-active");
+        }
+        if (title == "Admin") {
+            setAdminActive("tab-active");
         }
     }, [isDisconnected, isConnected]);
 
@@ -80,6 +84,11 @@ const Header = ({ title }) => {
                             <li className="hover-bordered">
                                 <Link href="/mint">
                                     <a>Mint</a>
+                                </Link>
+                            </li>
+                            <li className="hover-bordered">
+                                <Link href="/admin">
+                                    <a>Admin</a>
                                 </Link>
                             </li>
                         </ul>
@@ -147,6 +156,20 @@ const Header = ({ title }) => {
                                 }}
                             >
                                 Mint
+                            </a>
+                        </Link>
+                        <Link href="/admin">
+                            <a
+                                className={`tab tab-bordered ${adminActive} hover:tab-active text-[16px] badge badge-primary badge-outline`}
+                                onClick={() => {
+                                    setAboutActive("");
+                                    setTeamActive("");
+                                    setFaqActive("");
+                                    setMintActive("");
+                                    setAdminActive("tab-active");
+                                }}
+                            >
+                                Admin
                             </a>
                         </Link>
                     </div>

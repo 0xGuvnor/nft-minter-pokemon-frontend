@@ -208,11 +208,9 @@ const MintCard = () => {
         if (mintFeePer) {
             setMintFee(ethers.utils.formatEther(mintFeePer.mul(mintAmount)));
         }
-
         if (chain?.id) {
             setPokedexAddress(networkMapping[chain.id].Pokedex[0]);
         }
-
         if (callMint.isLoading) {
             setisMining(true);
         }

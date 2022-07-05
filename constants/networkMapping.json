@@ -1,1 +1,6 @@
-{ "4": { "Pokedex": ["0x43d627120D1c800e9574f3382f54B99102E7Bcc0"] } }
+{
+    "4": {
+        "Pokedex": ["0x43d627120D1c800e9574f3382f54B99102E7Bcc0"],
+        "MultiSig": ["0xff8Ce572d48fA8FB8bCd2943F27B22127791D612"]
+    }
+}
