@@ -51,10 +51,7 @@ const SubmitTxCard = () => {
 
     return (
         <div className="2xl:w-1/4">
-            <div
-                tabIndex="0"
-                className="mx-2 my-4 shadow-xl rounded-box collapse-arrow collapse group"
-            >
+            <div tabIndex="0" className="mx-2 my-4 shadow-xl rounded-box collapse-arrow collapse">
                 <input type="checkbox" className="peer" />
                 <h1 className="text-lg collapse-title bg-base-300 text-primary-content">
                     1. Submit Transaction
@@ -88,7 +85,6 @@ const SubmitTxCard = () => {
                                     setShowFunctionDataField(true);
                                 }
                             }}
-                            onFocus={(e) => console.log(e)}
                         >
                             <option selected disabled>
                                 --Pick one--
