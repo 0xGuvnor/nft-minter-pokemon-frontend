@@ -4,13 +4,15 @@ import { useContractRead, useContractWrite } from "wagmi";
 
 const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI }) => {
     const [pauseMintStatus, setPauseMintStatus] = useState("");
+
     const [recipientAddress, setRecipientAddress] = useState("");
     const [ethAmount, setEthAmount] = useState("");
     const [functionData, setFunctionData] = useState("");
-    const [showSubmit, setShowSubmit] = useState(false);
+
     const [showAddressField, setShowAddressField] = useState(false);
     const [showEthAmountField, setShowEthAmountField] = useState(false);
     const [showFunctionDataField, setShowFunctionDataField] = useState(false);
+    const [showSubmitButton, setShowSubmitButton] = useState(false);
 
     const pokedexContract = { addressOrName: pokedexAddress, contractInterface: PokedexABI };
     const multisigContract = { addressOrName: multisigAddress, contractInterface: MultisigABI };
@@ -57,17 +59,17 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setShowAddressField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
-                                    setShowSubmit(true);
+                                    setShowSubmitButton(true);
                                 } else if (e.target.value === "Withdraw ETH") {
                                     setShowAddressField(true);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
-                                    setShowSubmit(true);
+                                    setShowSubmitButton(true);
                                 } else if (e.target.value === "Advanced") {
                                     setShowAddressField(true);
                                     setShowEthAmountField(true);
                                     setShowFunctionDataField(true);
-                                    setShowSubmit(true);
+                                    setShowSubmitButton(true);
                                 }
                             }}
                         >
@@ -129,7 +131,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                             />
                         </div>
                     )}
-                    {showSubmit && (
+                    {showSubmitButton && (
                         <div>
                             <button className="w-full mt-1 btn btn-neutral">Submit</button>
                         </div>
