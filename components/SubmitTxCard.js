@@ -1,15 +1,8 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
-import { useContractRead, useContractWrite, useNetwork } from "wagmi";
-import networkMapping from "../constants/networkMapping.json";
-import PokedexABI from "../constants/Pokedex.json";
-import MultisigABI from "../constants/MultiSig.json";
+import { useContractRead, useContractWrite } from "wagmi";
 
-const SubmitTxCard = () => {
-    const { chain } = useNetwork();
-
-    const [pokedexAddress, setPokedexAddress] = useState("");
-    const [multisigAddress, setMultisigAddress] = useState("");
+const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI }) => {
     const [pauseMintStatus, setPauseMintStatus] = useState("");
     const [recipientAddress, setRecipientAddress] = useState("");
     const [ethAmount, setEthAmount] = useState("");
@@ -18,6 +11,8 @@ const SubmitTxCard = () => {
     const [showAddressField, setShowAddressField] = useState(false);
     const [showEthAmountField, setShowEthAmountField] = useState(false);
     const [showFunctionDataField, setShowFunctionDataField] = useState(false);
+
+    console.log(MultisigABI);
 
     const pokedexContract = { addressOrName: pokedexAddress, contractInterface: PokedexABI };
     const multisigContract = { addressOrName: multisigAddress, contractInterface: MultisigABI };
@@ -40,14 +35,8 @@ const SubmitTxCard = () => {
     });
 
     useEffect(() => {
-        if (chain?.id) {
-            setPokedexAddress(networkMapping[chain.id].Pokedex[0]);
-            setMultisigAddress(networkMapping[chain.id].MultiSig[0]);
-        }
         setPauseMintStatus(getPauseStatus);
-    }, [chain?.id, getPauseStatus]);
-
-    console.log(multisigAddress);
+    }, [getPauseStatus]);
 
     return (
         <div className="2xl:w-1/4">
