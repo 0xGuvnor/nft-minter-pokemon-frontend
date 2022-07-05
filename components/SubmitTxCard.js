@@ -12,8 +12,6 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
     const [showEthAmountField, setShowEthAmountField] = useState(false);
     const [showFunctionDataField, setShowFunctionDataField] = useState(false);
 
-    console.log(MultisigABI);
-
     const pokedexContract = { addressOrName: pokedexAddress, contractInterface: PokedexABI };
     const multisigContract = { addressOrName: multisigAddress, contractInterface: MultisigABI };
 
@@ -25,18 +23,20 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
     const pauseMint = useContractWrite({
         ...multisigContract,
         functionName: "submitTransaction",
-        args: [pokedexAddress, 0],
+        args: [pokedexAddress, 0, "0x8456cb59"],
     });
 
     const unpauseMint = useContractWrite({
         ...multisigContract,
         functionName: "submitTransaction",
-        args: [pokedexAddress, 0],
+        args: [pokedexAddress, 0, "0x3f4ba83a"],
     });
 
     useEffect(() => {
         setPauseMintStatus(getPauseStatus);
     }, [getPauseStatus]);
+
+    console.log(pauseMintStatus);
 
     return (
         <div className="2xl:w-1/4">
@@ -46,7 +46,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                     1. Submit Transaction
                 </h1>
                 <div className="space-y-2 collapse-content bg-primary text-primary-content peer-checked:bg-accent peer-checked:text-accent-content">
-                    <div className="w-full max-w-xs form-control">
+                    <div className="w-full form-control">
                         <label className="label">
                             <span className="label-text">Function to Call</span>
                         </label>
@@ -54,24 +54,20 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                             className="select select-bordered bg-accent"
                             onChange={(e) => {
                                 if (e.target.value === "Pause/Unpause Minting") {
-                                    setShowSubmit(true);
                                     setShowAddressField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
-
-                                    setFunctionData("");
-                                } else if (e.target.value === "Withdraw ETH") {
                                     setShowSubmit(true);
+                                } else if (e.target.value === "Withdraw ETH") {
                                     setShowAddressField(true);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
-
-                                    setFunctionData("");
-                                } else if (e.target.value === "Advanced") {
                                     setShowSubmit(true);
+                                } else if (e.target.value === "Advanced") {
                                     setShowAddressField(true);
                                     setShowEthAmountField(true);
                                     setShowFunctionDataField(true);
+                                    setShowSubmit(true);
                                 }
                             }}
                         >
@@ -88,28 +84,28 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                         </select>
                     </div>
                     {showAddressField && (
-                        <div className="w-full max-w-xs form-control">
+                        <div className="w-full form-control">
                             <label className="label">
                                 <span className="label-text">Recipient Address</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="0x..."
-                                className="w-full max-w-xs input input-bordered bg-accent"
+                                className="w-full input input-bordered bg-accent"
                                 onChange={(e) => setRecipientAddress(e.target.value)}
                                 value={recipientAddress}
                             />
                         </div>
                     )}
                     {showEthAmountField && (
-                        <div className="w-full max-w-xs form-control">
+                        <div className="w-full form-control">
                             <label className="label">
                                 <span className="label-text">ETH Amount (if any)</span>
                             </label>
                             <input
                                 type="number"
                                 placeholder="0, if empty"
-                                className="w-full max-w-xs input input-bordered bg-accent"
+                                className="w-full input input-bordered bg-accent"
                                 onChange={(e) =>
                                     e.target.value
                                         ? setEthAmount(ethers.utils.parseEther(e.target.value))
@@ -120,14 +116,14 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                         </div>
                     )}
                     {showFunctionDataField && (
-                        <div className="w-full max-w-xs form-control">
+                        <div className="w-full form-control">
                             <label className="label">
                                 <span className="label-text">Function Data</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="0x..."
-                                className="w-full max-w-xs input input-bordered bg-accent"
+                                className="w-full input input-bordered bg-accent"
                                 onChange={(e) => setFunctionData(e.target.value)}
                                 value={functionData}
                             />
@@ -135,7 +131,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                     )}
                     {showSubmit && (
                         <div>
-                            <button className="w-full max-w-xs mt-1 btn btn-neutral">Submit</button>
+                            <button className="w-full mt-1 btn btn-neutral">Submit</button>
                         </div>
                     )}
                 </div>
