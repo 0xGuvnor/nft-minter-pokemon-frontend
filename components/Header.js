@@ -86,7 +86,7 @@ const Header = ({ title }) => {
                                     <a>Mint</a>
                                 </Link>
                             </li>
-                            <li className="hover-bordered">
+                            <li className="w-[5.5rem] rounded-full hover-bordered outline outline-1 outline-primary hover:outline-none">
                                 <Link href="/admin">
                                     <a>Admin</a>
                                 </Link>

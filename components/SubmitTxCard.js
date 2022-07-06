@@ -2,7 +2,15 @@ import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 import { useContractRead, useSendTransaction, useWaitForTransaction } from "wagmi";
 
-const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI }) => {
+const SubmitTxCard = ({
+    pokedexAddress,
+    multisigAddress,
+    PokedexABI,
+    MultisigABI,
+    toastError,
+    toastSuccess,
+    toastLoading,
+}) => {
     // Field values
     const [callingContract, setCallingContract] = useState("");
     const [ethAmount, setEthAmount] = useState("");
@@ -40,11 +48,16 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
             data: functionData,
         },
         onSuccess(tx) {
-            console.log(tx);
+            toastLoading(tx.hash);
         },
         onError(err) {
-            console.log(err);
+            console.error(err);
             setIsMining(false);
+            if (err.code == 4001) {
+                toastError(err.message);
+            } else {
+                toastError("Hmm looks like something went wrong...");
+            }
         },
     });
 
@@ -53,10 +66,12 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
         staleTime: 60_000,
         onSuccess(tx) {
             setIsMining(false);
+            toastSuccess(tx.transactionHash);
         },
         onError(err) {
             setIsMining(false);
-            console.log(err);
+            console.error(err);
+            toastError(err.message);
         },
     });
 
@@ -87,7 +102,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
     }, [getPauseStatus, role, addressArg, isLoading, pokedexAddress]);
 
     return (
-        <div className="2xl:w-1/4">
+        <div className="sm:w-[30rem]">
             <div className="mx-2 my-4 shadow-xl rounded-box collapse-arrow collapse">
                 <input type="checkbox" className="peer" />
                 <h1 className="text-lg collapse-title bg-base-300 text-primary-content">

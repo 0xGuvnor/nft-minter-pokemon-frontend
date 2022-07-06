@@ -51,7 +51,7 @@ const MintCard = () => {
             toastMintLoading(tx.hash);
         },
         onError(error) {
-            console.log(error);
+            console.error(error);
             setisMining(false);
             if (error.code == 4001) {
                 toastError(error.message);
@@ -71,7 +71,7 @@ const MintCard = () => {
         onError(error) {
             setisMining(false);
             toastError(error.message);
-            console.log(error);
+            console.error(error);
         },
     });
 
