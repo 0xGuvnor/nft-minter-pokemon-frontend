@@ -265,7 +265,7 @@ const SubmitTxCard = ({
                             </label>
                             <input
                                 type="number"
-                                placeholder="0, if empty"
+                                placeholder="0, if none"
                                 className="w-full input input-bordered bg-accent"
                                 onChange={(e) => setEthAmount(e.target.value)}
                                 value={ethAmount}
