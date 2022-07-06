@@ -7,6 +7,9 @@ import networkMapping from "../constants/networkMapping.json";
 import PokedexABI from "../constants/Pokedex.json";
 import MultisigABI from "../constants/MultiSig.json";
 import { useNetwork } from "wagmi";
+import ConfirmTxCard from "../components/ConfirmTxCard";
+import ExecuteTxCard from "../components/ExecuteTxCard";
+import TxTable from "../components/TxTable";
 
 const Admin = () => {
     const { chain } = useNetwork();
@@ -112,6 +115,9 @@ const Admin = () => {
                     toastSuccess={toastSuccess}
                     toastError={toastError}
                 />
+                <ConfirmTxCard />
+                <ExecuteTxCard />
+                <TxTable />
             </FadeIn>
         </div>
     );
