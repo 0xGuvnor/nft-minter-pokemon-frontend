@@ -103,7 +103,7 @@ const SubmitTxCard = ({
 
     return (
         <div className="sm:w-[30rem]">
-            <div className="mx-2 my-4 shadow-xl rounded-box collapse-arrow collapse">
+            <div className="mx-2 my-4 border shadow-xl rounded-box collapse-arrow collapse border-base-200">
                 <input type="checkbox" className="peer" />
                 <h1 className="text-lg collapse-title bg-base-300 text-primary-content">
                     1. Submit Transaction
