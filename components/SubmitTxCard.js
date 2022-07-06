@@ -22,7 +22,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
     const [isMining, setIsMining] = useState(false);
     const [addressArgError, setAddressArgError] = useState(false);
 
-    const [functionName, setFunctionName] = useState("");
+    const [funcName, setFuncName] = useState("");
     const [role, setRole] = useState("");
 
     const pokedexContract = { addressOrName: pokedexAddress, contractInterface: PokedexABI };
@@ -74,7 +74,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                     pokedexAddress,
                     0,
                     pokedexInterface.encodeFunctionData(
-                        functionName,
+                        funcName,
                         role ? [role, addressArg] : [addressArg]
                     ),
                 ])
@@ -84,7 +84,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
             console.error(err);
             setAddressArgError(true);
         }
-    }, [getPauseStatus, role, addressArg, isLoading]);
+    }, [getPauseStatus, role, addressArg, isLoading, pokedexAddress]);
 
     return (
         <div className="2xl:w-1/4">
@@ -126,7 +126,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                               )
                                           );
                                     setAddressArg("");
-                                    setFunctionName("");
+                                    setFuncName("");
                                     setRole("");
                                 } else if (e.target.value === "Grant Pauser Role") {
                                     setShowCallingContractField(false);
@@ -139,7 +139,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setEthAmount(0);
                                     setFunctionData("");
                                     setAddressArg("");
-                                    setFunctionName("grantRole");
+                                    setFuncName("grantRole");
                                     setRole(
                                         "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a"
                                     );
@@ -154,7 +154,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setEthAmount(0);
                                     setFunctionData("");
                                     setAddressArg("");
-                                    setFunctionName("revokeRole");
+                                    setFuncName("revokeRole");
                                     setRole(
                                         "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a"
                                     );
@@ -169,7 +169,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setEthAmount(0);
                                     setFunctionData("");
                                     setAddressArg("");
-                                    setFunctionName("grantRole");
+                                    setFuncName("grantRole");
                                     setRole(
                                         "0xeb565a5d2560fbcd61124fb11c656fd5c0bb173b6d55ef481d5b235d116cbeb1"
                                     );
@@ -184,7 +184,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setEthAmount(0);
                                     setFunctionData("");
                                     setAddressArg("");
-                                    setFunctionName("revokeRole");
+                                    setFuncName("revokeRole");
                                     setRole(
                                         "0xeb565a5d2560fbcd61124fb11c656fd5c0bb173b6d55ef481d5b235d116cbeb1"
                                     );
@@ -199,7 +199,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setEthAmount(0);
                                     setFunctionData("");
                                     setAddressArg("");
-                                    setFunctionName("withdrawETH");
+                                    setFuncName("withdrawETH");
                                     setRole("");
                                 } else if (e.target.value === "Advanced") {
                                     setShowCallingContractField(true);
@@ -212,7 +212,7 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                                     setEthAmount(0);
                                     setFunctionData("");
                                     setAddressArg("");
-                                    setFunctionName("");
+                                    setFuncName("");
                                     setRole("");
                                 }
                             }}
@@ -276,8 +276,8 @@ const SubmitTxCard = ({ pokedexAddress, multisigAddress, PokedexABI, MultisigABI
                             <label className="label">
                                 <span className="label-text">Address</span>
                                 {addressArgError && (
-                                    <span class="label-text-alt text-error">
-                                        Not a valid address
+                                    <span className="label-text-alt text-error">
+                                        Invalid Address
                                     </span>
                                 )}
                             </label>
