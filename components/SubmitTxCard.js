@@ -261,7 +261,7 @@ const SubmitTxCard = ({
                     {showEthAmountField && (
                         <div className="w-full form-control">
                             <label className="label">
-                                <span className="label-text">ETH Amount (if any)</span>
+                                <span className="label-text">ETH Amount</span>
                             </label>
                             <input
                                 type="number"
