@@ -1,3 +1,4 @@
+import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { useContractReads } from "wagmi";
 
@@ -15,6 +16,10 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
             { ...multisigContract, functionName: "getTransactionCount" },
         ],
     });
+
+    const { loading: loadingActive, error: errorActive, data: tableActive } = useQuery();
+    const { loading: loadingExecuted, error: errorExecuted, data: tableExecuted } = useQuery();
+    const { loading: loadingAll, error: errorAll, data: tableAll } = useQuery();
 
     // console.log(owners);
 

@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Pikachu from "../assets/Pikachu.png";
 import { openseaCollection } from "../constants/urlLinks";
 
 const style = {
@@ -12,8 +14,8 @@ const style = {
     ctaContainer: `flex justify-center lg:justify-start space-x-4 md:mb-4`,
     mintButton: `text-[0.7rem] sm:text-sm md:text-md text-center font-black w-1/2 md:w-1/3 py-4 px-2 bg-[#04E762] md:rounded-full rounded-lg hover:bg-[#89FC00] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
     openseaButton: `text-[0.7rem] sm:text-sm md:text-md text-center font-black w-1/2 md:w-1/3 py-4 px-2 bg-[#576066] md:rounded-full rounded-lg text-white  hover:bg-[#7D8491] transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110`,
-    cardContainer: `drop-shadow-2xl h-[16em] w-[16rem] sm:h-[28rem] sm:w-[28rem] lg:h-[30rem] lg:w-[30rem] xl:h-[36rem] xl:w-[36rem] -mt-20 sm:mt-0 md:mb-12`,
-    imageCard: `rounded-t-2xl sm:rounded-t-3xl`,
+    cardContainer: `drop-shadow-2xl -mt-20 sm:mt-0 md:mb-12`,
+    imageCard: `rounded-t-2xl sm:rounded-t-3xl bg-white flex justify-center h-[16em] w-[16rem] sm:h-[28rem] sm:w-[28rem] lg:h-[30rem] lg:w-[30rem] xl:h-[33rem] xl:w-[36rem]`,
     infoContainer: `h-12 sm:h-20 bg-black rounded-b-2xl sm:rounded-b-3xl px-3 sm:px-6 py-5 flex items-center text-white`,
     avatar: `h-[1.7rem] sm:h-[2.5rem] rounded-full`,
     authorInfo: `ml-2 sm:ml-4 flex flex-col text-[0.7rem] sm:text-base`,
@@ -49,10 +51,13 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className={style.cardContainer}>
-                        <img
-                            className={style.imageCard}
+                        <div className={style.imageCard}>
+                            <Image src={Pikachu} />
+                        </div>
+                        {/* <img
+                            
                             src="https://www.pngitem.com/pimgs/m/373-3734017_pokemon-pikachu-hd-png-download.png"
-                        />
+                        /> */}
                         <div className={style.infoContainer}>
                             <img
                                 className={style.avatar}

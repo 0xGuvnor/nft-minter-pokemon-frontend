@@ -12,7 +12,10 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
 import { Toaster } from "react-hot-toast";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Footer from "../components/Footer";
+
+const client = new ApolloClient({ uri: "", cache: new InMemoryCache() });
 
 const { chains, provider } = configureChains(
     [chain.rinkeby],
@@ -40,30 +43,32 @@ const wagmiClient = createClient({
 
 function MyApp({ Component, pageProps }) {
     return (
-        <WagmiConfig client={wagmiClient}>
-            <RainbowKitProvider
-                coolMode
-                chains={chains}
-                theme={darkTheme({
-                    overlayBlur: "small",
-                    fontStack: "system",
-                    accentColor: "#BA274A",
-                    accentColorForeground: "white",
-                })}
-                showRecentTransactions={true}
-            >
-                <Toaster
-                    position="top-right"
-                    toastOptions={{
-                        className: "",
-                        duration: 7000,
-                        style: { background: "#FDFCDC", color: "#2B2D42" },
-                    }}
-                />
-                <Component {...pageProps} />
-                <Footer />
-            </RainbowKitProvider>
-        </WagmiConfig>
+        <ApolloProvider client={client}>
+            <WagmiConfig client={wagmiClient}>
+                <RainbowKitProvider
+                    coolMode
+                    chains={chains}
+                    theme={darkTheme({
+                        overlayBlur: "small",
+                        fontStack: "system",
+                        accentColor: "#BA274A",
+                        accentColorForeground: "white",
+                    })}
+                    showRecentTransactions={true}
+                >
+                    <Toaster
+                        position="top-right"
+                        toastOptions={{
+                            className: "",
+                            duration: 7000,
+                            style: { background: "#FDFCDC", color: "#2B2D42" },
+                        }}
+                    />
+                    <Component {...pageProps} />
+                    <Footer />
+                </RainbowKitProvider>
+            </WagmiConfig>
+        </ApolloProvider>
     );
 }
 
