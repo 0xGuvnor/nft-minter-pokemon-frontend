@@ -17,9 +17,9 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
         ],
     });
 
-    const { loading: loadingActive, error: errorActive, data: tableActive } = useQuery();
-    const { loading: loadingExecuted, error: errorExecuted, data: tableExecuted } = useQuery();
-    const { loading: loadingAll, error: errorAll, data: tableAll } = useQuery();
+    // const { loading: loadingActive, error: errorActive, data: tableActive } = useQuery();
+    // const { loading: loadingExecuted, error: errorExecuted, data: tableExecuted } = useQuery();
+    // const { loading: loadingAll, error: errorAll, data: tableAll } = useQuery();
 
     // console.log(owners);
 
