@@ -106,18 +106,34 @@ const Admin = () => {
         <div>
             <Header title={"Admin"} />
             <FadeIn>
-                <SubmitTxCard
-                    pokedexAddress={pokedexAddress}
-                    multisigAddress={multisigAddress}
-                    PokedexABI={PokedexABI}
-                    MultisigABI={MultisigABI}
-                    toastLoading={toastLoading}
-                    toastSuccess={toastSuccess}
-                    toastError={toastError}
-                />
-                <ConfirmTxCard />
-                <ExecuteTxCard />
-                <TxTable />
+                <div className="flex flex-col items-center justify-center">
+                    <div className="sm:items-center md:items-start sm:justify-center sm:flex sm:flex-col md:flex-row md:mt-4">
+                        <SubmitTxCard
+                            pokedexAddress={pokedexAddress}
+                            multisigAddress={multisigAddress}
+                            PokedexABI={PokedexABI}
+                            MultisigABI={MultisigABI}
+                            toastLoading={toastLoading}
+                            toastSuccess={toastSuccess}
+                            toastError={toastError}
+                        />
+                        <ConfirmTxCard
+                            multisigAddress={multisigAddress}
+                            MultisigABI={MultisigABI}
+                            toastLoading={toastLoading}
+                            toastSuccess={toastSuccess}
+                            toastError={toastError}
+                        />
+                        <ExecuteTxCard
+                            multisigAddress={multisigAddress}
+                            MultisigABI={MultisigABI}
+                            toastLoading={toastLoading}
+                            toastSuccess={toastSuccess}
+                            toastError={toastError}
+                        />
+                    </div>
+                    <TxTable multisigAddress={multisigAddress} MultisigABI={MultisigABI} />
+                </div>
             </FadeIn>
         </div>
     );

@@ -103,12 +103,12 @@ const SubmitTxCard = ({
 
     return (
         <div className="sm:w-[30rem]">
-            <div className="mx-2 my-4 border shadow-xl rounded-box collapse-arrow collapse border-base-200">
+            <div className="mx-2 my-4 border shadow-xl rounded-box collapse-arrow collapse md:collapse-open border-base-200">
                 <input type="checkbox" className="peer" />
                 <h1 className="text-lg collapse-title bg-base-300 text-primary-content">
                     1. Submit Transaction
                 </h1>
-                <div className="space-y-2 collapse-content bg-primary text-primary-content peer-checked:bg-accent peer-checked:text-accent-content">
+                <div className="space-y-2 collapse-content bg-accent text-accent-content peer-checked:bg-accent peer-checked:text-accent-content">
                     <div className="w-full form-control">
                         <label className="label">
                             <span className="label-text">Function to Call</span>

@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }) {
                     position="top-right"
                     toastOptions={{
                         className: "",
-                        duration: 5000,
+                        duration: 7000,
                         style: { background: "#FDFCDC", color: "#2B2D42" },
                     }}
                 />
