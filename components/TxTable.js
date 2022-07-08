@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
-import { useContractReads } from "wagmi";
+import { useBalance, useContractReads } from "wagmi";
 
 const TxTable = ({ multisigAddress, MultisigABI }) => {
     const [activeTab1, setActiveTab1] = useState(true);
@@ -8,6 +8,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
     const [activeTab3, setActiveTab3] = useState(false);
     const [owners, setOwners] = useState([]);
     const [transactionCount, setTransactionCount] = useState(0);
+    const [balance, setBalance] = useState(0);
 
     const multisigContract = { addressOrName: multisigAddress, contractInterface: MultisigABI };
     const { data: multisigStats } = useContractReads({
@@ -15,6 +16,9 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
             { ...multisigContract, functionName: "getOwners" },
             { ...multisigContract, functionName: "getTransactionCount" },
         ],
+    });
+    const { data: getBalance, isLoading: loadingBalance } = useBalance({
+        addressOrName: multisigAddress,
     });
 
     // const { loading: loadingActive, error: errorActive, data: tableActive } = useQuery();
@@ -28,7 +32,10 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
             setOwners(multisigStats[0]);
             setTransactionCount(multisigStats[1]?.toNumber());
         }
-    }, [multisigStats]);
+        if (loadingBalance) {
+            setBalance(getBalance);
+        }
+    }, [multisigStats, loadingBalance]);
 
     return (
         <div className="z-50 mx-2 mb-10">
@@ -70,6 +77,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                     <thead>
                         <tr className="text-primary-content">
                             <th>Transaction ID</th>
+                            <th>Created By</th>
                             <th>To</th>
                             <th>Value</th>
                             <th>Data</th>
