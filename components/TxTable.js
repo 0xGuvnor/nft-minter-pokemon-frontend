@@ -26,7 +26,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
     useEffect(() => {
         if (multisigStats) {
             setOwners(multisigStats[0]);
-            setTransactionCount(multisigStats[1].toNumber());
+            setTransactionCount(multisigStats[1]?.toNumber());
         }
     }, [multisigStats]);
 
