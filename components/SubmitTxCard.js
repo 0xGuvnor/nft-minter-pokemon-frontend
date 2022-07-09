@@ -16,12 +16,14 @@ const SubmitTxCard = ({
     const [ethAmount, setEthAmount] = useState("");
     const [functionData, setFunctionData] = useState("");
     const [addressArg, setAddressArg] = useState("");
+    const [description, setDescription] = useState("");
 
     // Fields
     const [showCallingContractField, setShowCallingContractField] = useState(false);
     const [showEthAmountField, setShowEthAmountField] = useState(false);
     const [showFunctionDataField, setShowFunctionDataField] = useState(false);
     const [showAddressArgField, setShowAddressArgField] = useState(false);
+    const [showDescriptionField, setShowDescriptionField] = useState(false);
 
     const [showSubmitButton, setShowSubmitButton] = useState(false);
 
@@ -92,6 +94,7 @@ const SubmitTxCard = ({
                         funcName,
                         role ? [role, addressArg] : [addressArg]
                     ),
+                    description,
                 ])
             );
             setAddressArgError(false);
@@ -100,6 +103,8 @@ const SubmitTxCard = ({
             setAddressArgError(true);
         }
     }, [getPauseStatus, role, addressArg, isLoading, pokedexAddress]);
+
+    console.log(`funcName: ${funcName}, role: ${role}, addressArg: ${addressArg}`);
 
     return (
         <div className="sm:w-[30rem]">
@@ -122,6 +127,7 @@ const SubmitTxCard = ({
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
                                     setShowAddressArgField(false);
+                                    setShowDescriptionField(false);
                                     setShowSubmitButton(true);
 
                                     // Field values
@@ -143,11 +149,13 @@ const SubmitTxCard = ({
                                     setAddressArg("");
                                     setFuncName("");
                                     setRole("");
+                                    setDescription("");
                                 } else if (e.target.value === "Grant Pauser Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
                                     setShowAddressArgField(true);
+                                    setShowDescriptionField(false);
                                     setShowSubmitButton(true);
 
                                     setCallingContract(multisigAddress);
@@ -158,11 +166,13 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a"
                                     );
+                                    setDescription("");
                                 } else if (e.target.value === "Revoke Pauser Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
                                     setShowAddressArgField(true);
+                                    setShowDescriptionField(false);
                                     setShowSubmitButton(true);
 
                                     setCallingContract(multisigAddress);
@@ -173,11 +183,13 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a"
                                     );
+                                    setDescription("");
                                 } else if (e.target.value === "Grant URI Assigner Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
                                     setShowAddressArgField(true);
+                                    setShowDescriptionField(false);
                                     setShowSubmitButton(true);
 
                                     setCallingContract(multisigAddress);
@@ -188,11 +200,13 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0xeb565a5d2560fbcd61124fb11c656fd5c0bb173b6d55ef481d5b235d116cbeb1"
                                     );
+                                    setDescription("");
                                 } else if (e.target.value === "Revoke URI Assigner Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
                                     setShowAddressArgField(true);
+                                    setShowDescriptionField(false);
                                     setShowSubmitButton(true);
 
                                     setCallingContract(multisigAddress);
@@ -203,11 +217,13 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0xeb565a5d2560fbcd61124fb11c656fd5c0bb173b6d55ef481d5b235d116cbeb1"
                                     );
+                                    setDescription("");
                                 } else if (e.target.value === "Withdraw ETH") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
                                     setShowFunctionDataField(false);
                                     setShowAddressArgField(true);
+                                    setShowDescriptionField(false);
                                     setShowSubmitButton(true);
 
                                     setCallingContract(multisigAddress);
@@ -216,11 +232,13 @@ const SubmitTxCard = ({
                                     setAddressArg("");
                                     setFuncName("withdrawETH");
                                     setRole("");
+                                    setDescription("");
                                 } else if (e.target.value === "Advanced") {
                                     setShowCallingContractField(true);
                                     setShowEthAmountField(true);
                                     setShowFunctionDataField(true);
                                     setShowAddressArgField(false);
+                                    setShowDescriptionField(true);
                                     setShowSubmitButton(true);
 
                                     setCallingContract("");
@@ -229,6 +247,7 @@ const SubmitTxCard = ({
                                     setAddressArg("");
                                     setFuncName("");
                                     setRole("");
+                                    setDescription("");
                                 }
                             }}
                         >
@@ -304,6 +323,20 @@ const SubmitTxCard = ({
                                 }`}
                                 onChange={(e) => setAddressArg(e.target.value)}
                                 value={addressArg}
+                            />
+                        </div>
+                    )}
+                    {showDescriptionField && (
+                        <div className="w-full form-control">
+                            <label className="label">
+                                <span className="label-text">Description</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Type here"
+                                className="w-full input input-bordered bg-accent"
+                                onChange={(e) => setDescription(e.target.value)}
+                                value={description}
                             />
                         </div>
                     )}
