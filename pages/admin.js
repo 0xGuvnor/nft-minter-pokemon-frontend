@@ -97,8 +97,8 @@ const Admin = () => {
 
     useEffect(() => {
         if (chain?.id) {
-            setPokedexAddress(networkMapping[chain.id].Pokedex[0]);
-            setMultisigAddress(networkMapping[chain.id].MultiSig[0]);
+            setPokedexAddress(networkMapping[chain?.id].Pokedex[0]);
+            setMultisigAddress(networkMapping[chain?.id].MultiSig[0]);
         }
     }, [chain?.id]);
 

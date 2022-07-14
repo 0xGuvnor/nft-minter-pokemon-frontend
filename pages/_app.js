@@ -15,7 +15,10 @@ import { Toaster } from "react-hot-toast";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Footer from "../components/Footer";
 
-const client = new ApolloClient({ uri: "", cache: new InMemoryCache() });
+const client = new ApolloClient({
+    uri: "https://api.studio.thegraph.com/query/29304/pokedex/v0.1.1",
+    cache: new InMemoryCache(),
+});
 
 const { chains, provider } = configureChains(
     [chain.rinkeby],

@@ -104,8 +104,6 @@ const SubmitTxCard = ({
         }
     }, [getPauseStatus, role, addressArg, isLoading, pokedexAddress]);
 
-    console.log(`funcName: ${funcName}, role: ${role}, addressArg: ${addressArg}`);
-
     return (
         <div className="sm:w-[30rem]">
             <div className="mx-2 my-4 border shadow-xl rounded-box collapse-arrow collapse md:collapse-open border-base-200">
