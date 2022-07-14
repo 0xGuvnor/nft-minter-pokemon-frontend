@@ -2,13 +2,8 @@ import { gql } from "@apollo/client";
 
 export const GET_ACTIVE_TRANSACTIONS = gql`
     {
-        aggTransactions(
-            first: 25
-            orderBy: id
-            orderDirection: desc
-            where: { executable: true, executed: false }
-        ) {
-            id
+        aggTransactions(first: 25, orderBy: id, orderDirection: desc, where: { executed: false }) {
+            txId
             createdBy
             to
             value
@@ -24,7 +19,7 @@ export const GET_ACTIVE_TRANSACTIONS = gql`
 export const GET_EXECUTED_TRANSACTIONS = gql`
     {
         aggTransactions(first: 25, orderBy: id, orderDirection: desc, where: { executed: true }) {
-            id
+            txId
             createdBy
             to
             value
@@ -44,7 +39,7 @@ export const GET_ALL_TRANSACTIONS = gql`
             transactionType
             sentBy
             aggTransaction {
-                id
+                txId
                 to
                 value
                 data

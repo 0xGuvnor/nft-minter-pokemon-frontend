@@ -36,7 +36,6 @@ const SubmitTxCard = ({
     const [role, setRole] = useState("");
 
     const pokedexContract = { addressOrName: pokedexAddress, contractInterface: PokedexABI };
-    const multisigContract = { addressOrName: multisigAddress, contractInterface: MultisigABI };
 
     const { data: getPauseStatus } = useContractRead({
         ...pokedexContract,
@@ -102,7 +101,7 @@ const SubmitTxCard = ({
             console.error(err);
             setAddressArgError(true);
         }
-    }, [getPauseStatus, role, addressArg, isLoading, pokedexAddress]);
+    }, [getPauseStatus, role, addressArg, description, isLoading, pokedexAddress]);
 
     return (
         <div className="sm:w-[30rem]">
@@ -131,23 +130,33 @@ const SubmitTxCard = ({
                                     // Field values
                                     setCallingContract(multisigAddress);
                                     setEthAmount(0);
+                                    setAddressArg("");
+                                    setFuncName("");
+                                    setRole("");
+                                    setDescription("");
                                     pauseMintStatus
                                         ? setFunctionData(
                                               multisigInterface.encodeFunctionData(
                                                   "submitTransaction",
-                                                  [pokedexAddress, 0, "0x3f4ba83a" /* unpause */]
+                                                  [
+                                                      pokedexAddress,
+                                                      0,
+                                                      "0x3f4ba83a" /* unpause */,
+                                                      "Unpause Minting",
+                                                  ]
                                               )
                                           )
                                         : setFunctionData(
                                               multisigInterface.encodeFunctionData(
                                                   "submitTransaction",
-                                                  [pokedexAddress, 0, "0x8456cb59" /* pause */]
+                                                  [
+                                                      pokedexAddress,
+                                                      0,
+                                                      "0x8456cb59" /* pause */,
+                                                      "Pause Minting",
+                                                  ]
                                               )
                                           );
-                                    setAddressArg("");
-                                    setFuncName("");
-                                    setRole("");
-                                    setDescription("");
                                 } else if (e.target.value === "Grant Pauser Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
@@ -164,7 +173,7 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a"
                                     );
-                                    setDescription("");
+                                    setDescription("Grant Pauser Role");
                                 } else if (e.target.value === "Revoke Pauser Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
@@ -181,7 +190,7 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a"
                                     );
-                                    setDescription("");
+                                    setDescription("Revoke Pauser Role");
                                 } else if (e.target.value === "Grant URI Assigner Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
@@ -198,7 +207,7 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0xeb565a5d2560fbcd61124fb11c656fd5c0bb173b6d55ef481d5b235d116cbeb1"
                                     );
-                                    setDescription("");
+                                    setDescription("Grant URI Assigner Role");
                                 } else if (e.target.value === "Revoke URI Assigner Role") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
@@ -215,7 +224,7 @@ const SubmitTxCard = ({
                                     setRole(
                                         "0xeb565a5d2560fbcd61124fb11c656fd5c0bb173b6d55ef481d5b235d116cbeb1"
                                     );
-                                    setDescription("");
+                                    setDescription("Revoke URI Assigner Role");
                                 } else if (e.target.value === "Withdraw ETH") {
                                     setShowCallingContractField(false);
                                     setShowEthAmountField(false);
@@ -230,7 +239,7 @@ const SubmitTxCard = ({
                                     setAddressArg("");
                                     setFuncName("withdrawETH");
                                     setRole("");
-                                    setDescription("");
+                                    setDescription("Withdraw ETH");
                                 } else if (e.target.value === "Advanced") {
                                     setShowCallingContractField(true);
                                     setShowEthAmountField(true);

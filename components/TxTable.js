@@ -102,8 +102,8 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                         </thead>
                         <tbody>
                             {tableActive.aggTransactions.map((row) => (
-                                <tr className="hover" key={row.id}>
-                                    <td className="bg-accent">{row.id}</td>
+                                <tr className="hover" key={row.txId}>
+                                    <td className="bg-accent">{row.txId}</td>
                                     <td className="bg-accent">
                                         {row.createdBy.slice(0, 6)}...{row.createdBy.slice(-4)}
                                     </td>
@@ -111,16 +111,20 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                                         {row.to.slice(0, 6)}...{row.to.slice(-4)}
                                     </td>
                                     <td className="bg-accent">{row.value}</td>
-                                    <td className="text-xs bg-accent">
-                                        {row.data.slice(0, row.data.length / 3)}
-                                        <br />
-                                        {row.data.slice(
-                                            row.data.length / 3,
-                                            row.data.length - row.data.length / 3
-                                        )}
-                                        <br />
-                                        {row.data.slice(-(row.data.length / 3))}
-                                    </td>
+                                    {row.data.length > 40 ? (
+                                        <td className="text-xs bg-accent">
+                                            {row.data.slice(0, row.data.length / 3)}
+                                            <br />
+                                            {row.data.slice(
+                                                row.data.length / 3,
+                                                row.data.length - row.data.length / 3
+                                            )}
+                                            <br />
+                                            {row.data.slice(-(row.data.length / 3))}
+                                        </td>
+                                    ) : (
+                                        <td className="text-xs bg-accent">{row.data}</td>
+                                    )}
                                     <td className="bg-accent">{row.description}</td>
                                     <td className="bg-accent">
                                         {row.numConfirmations} / {row.numConfirmationsRequired}
@@ -131,41 +135,56 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                         </tbody>
                     </table>
                 ))}
-            {activeTab2 && (
-                <table className="table table-compact shadow-xl rounded-box w-[90rem]">
-                    <thead>
-                        <tr className="text-primary-content">
-                            <th>Transaction ID</th>
-                            <th>To</th>
-                            <th>Value</th>
-                            <th>Data</th>
-                            <th>Num. Confirmations</th>
-                            <th>Confirmed</th>
-                            <th>Executed</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className="hover">
-                            <td className="bg-accent text-accent-content">1</td>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Littel, Schaden and Vandervort</td>
-                            <td>Canada</td>
-                            <td>12/16/2020</td>
-                            <td>Blue</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Lorelei Blackstone</td>
-                            <td>Data Coordiator</td>
-                            <td>Witting, Kutch and Greenfelder</td>
-                            <td>Kazakhstan</td>
-                            <td>6/3/2020</td>
-                            <td>Red</td>
-                        </tr>
-                    </tbody>
-                </table>
-            )}
+            {activeTab2 &&
+                (loadingExecuted || !tableExecuted ? (
+                    <div>Loading...</div>
+                ) : (
+                    <table className="table table-compact shadow-xl rounded-box w-[90rem]">
+                        <thead>
+                            <tr className="text-primary-content">
+                                <th>Transaction ID</th>
+                                <th>Created By</th>
+                                <th>To</th>
+                                <th>Value</th>
+                                <th>Data</th>
+                                <th>Description</th>
+                                <th>Num. Confirmations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tableExecuted.aggTransactions.map((row) => (
+                                <tr className="hover" key={row.txId}>
+                                    <td className="bg-accent">{row.txId}</td>
+                                    <td className="bg-accent">
+                                        {row.createdBy.slice(0, 6)}...{row.createdBy.slice(-4)}
+                                    </td>
+                                    <td className="bg-accent">
+                                        {row.to.slice(0, 6)}...{row.to.slice(-4)}
+                                    </td>
+                                    <td className="bg-accent">{row.value}</td>
+                                    {row.data.length > 40 ? (
+                                        <td className="text-xs bg-accent">
+                                            {row.data.slice(0, row.data.length / 3)}
+                                            <br />
+                                            {row.data.slice(
+                                                row.data.length / 3,
+                                                row.data.length - row.data.length / 3
+                                            )}
+                                            <br />
+                                            {row.data.slice(-(row.data.length / 3))}
+                                        </td>
+                                    ) : (
+                                        <td className="text-xs bg-accent">{row.data}</td>
+                                    )}
+                                    <td className="bg-accent">{row.description}</td>
+                                    <td className="bg-accent">
+                                        {row.numConfirmations} / {row.numConfirmationsRequired}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                ))}
             {activeTab3 &&
                 (loadingAll || !tableAll ? (
                     <div>Loading...</div>
@@ -188,36 +207,44 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                         <tbody>
                             {tableAll.transactions.map((row) => (
                                 <tr className="hover" key={row.id}>
-                                    <td>{row.id}</td>
-                                    <td>{row.aggTransaction.id}</td>
-                                    <td>{row.transactionType}</td>
-                                    <td>
+                                    <td className="bg-accent">{row.id}</td>
+                                    <td className="bg-accent">{row.aggTransaction.txId}</td>
+                                    <td className="bg-accent">{row.transactionType}</td>
+                                    <td className="bg-accent">
                                         {row.sentBy.slice(0, 6)}...{row.sentBy.slice(-4)}
                                     </td>
-                                    <td>
+                                    <td className="bg-accent">
                                         {row.aggTransaction.to.slice(0, 6)}...
                                         {row.aggTransaction.to.slice(-4)}
                                     </td>
-                                    <td>{row.aggTransaction.value}</td>
-                                    <td className="text-xs">
-                                        {row.aggTransaction.data.slice(
-                                            0,
-                                            row.aggTransaction.data.length / 3
-                                        )}
-                                        <br />
-                                        {row.aggTransaction.data.slice(
-                                            row.aggTransaction.data.length / 3,
-                                            row.aggTransaction.data.length -
+                                    <td className="bg-accent">{row.aggTransaction.value}</td>
+                                    {row.aggTransaction.data.length > 40 ? (
+                                        <td className="text-xs bg-accent">
+                                            {row.aggTransaction.data.slice(
+                                                0,
                                                 row.aggTransaction.data.length / 3
-                                        )}
-                                        <br />
-                                        {row.aggTransaction.data.slice(
-                                            -(row.aggTransaction.data.length / 3)
-                                        )}
+                                            )}
+                                            <br />
+                                            {row.aggTransaction.data.slice(
+                                                row.aggTransaction.data.length / 3,
+                                                row.aggTransaction.data.length -
+                                                    row.aggTransaction.data.length / 3
+                                            )}
+                                            <br />
+                                            {row.aggTransaction.data.slice(
+                                                -(row.aggTransaction.data.length / 3)
+                                            )}
+                                        </td>
+                                    ) : (
+                                        <td className="text-xs bg-accent">
+                                            {row.aggTransaction.data}
+                                        </td>
+                                    )}
+                                    <td className="bg-accent">{row.aggTransaction.description}</td>
+                                    <td className="bg-accent">{`${row.aggTransaction.numConfirmations} / ${row.aggTransaction.numConfirmationsRequired}`}</td>
+                                    <td className="bg-accent">
+                                        {row.aggTransaction.executed ? "Yes" : "No"}
                                     </td>
-                                    <td>{row.aggTransaction.description}</td>
-                                    <td>{`${row.aggTransaction.numConfirmations} / ${row.aggTransaction.numConfirmationsRequired}`}</td>
-                                    <td>{row.aggTransaction.executed ? "Yes" : "No"}</td>
                                 </tr>
                             ))}
                         </tbody>

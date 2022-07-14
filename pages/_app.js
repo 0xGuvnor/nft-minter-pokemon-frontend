@@ -16,7 +16,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Footer from "../components/Footer";
 
 const client = new ApolloClient({
-    uri: "https://api.studio.thegraph.com/query/29304/pokedex/v0.1.1",
+    uri: "https://api.studio.thegraph.com/query/29304/pokedex/v0.1.5",
     cache: new InMemoryCache(),
 });
 
