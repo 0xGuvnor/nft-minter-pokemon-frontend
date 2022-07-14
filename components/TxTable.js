@@ -102,7 +102,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                         </thead>
                         <tbody>
                             {tableActive.aggTransactions.map((row) => (
-                                <tr className="hover">
+                                <tr className="hover" key={row.id}>
                                     <td className="bg-accent">{row.id}</td>
                                     <td className="bg-accent">
                                         {row.createdBy.slice(0, 6)}...{row.createdBy.slice(-4)}
@@ -187,7 +187,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                         </thead>
                         <tbody>
                             {tableAll.transactions.map((row) => (
-                                <tr className="hover">
+                                <tr className="hover" key={row.id}>
                                     <td>{row.id}</td>
                                     <td>{row.aggTransaction.id}</td>
                                     <td>{row.transactionType}</td>
