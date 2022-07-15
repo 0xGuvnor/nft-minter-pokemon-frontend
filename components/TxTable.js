@@ -192,8 +192,8 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                     <table className="table table-compact shadow-xl rounded-box w-[75rem]">
                         <thead>
                             <tr className="text-primary-content">
-                                <th className="sticky top-0">Transaction ID</th>
-                                <th className="sticky top-0">Transaction Type</th>
+                                <th className="sticky top-0">Tx ID</th>
+                                <th className="sticky top-0">Tx Type</th>
                                 <th className="sticky top-0">Sent By</th>
                                 <th className="sticky top-0">To</th>
                                 <th className="sticky top-0">Value</th>
