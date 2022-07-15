@@ -125,7 +125,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                                     ) : (
                                         <td className="text-xs bg-accent">{row.data}</td>
                                     )}
-                                    <td className="bg-accent">{row.description}</td>
+                                    <td className="text-xs bg-accent">{row.description}</td>
                                     <td className="bg-accent">
                                         {row.numConfirmations} / {row.numConfirmationsRequired}
                                     </td>
@@ -176,7 +176,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                                     ) : (
                                         <td className="text-xs bg-accent">{row.data}</td>
                                     )}
-                                    <td className="bg-accent">{row.description}</td>
+                                    <td className="text-xs bg-accent">{row.description}</td>
                                     <td className="bg-accent">
                                         {row.numConfirmations} / {row.numConfirmationsRequired}
                                     </td>
