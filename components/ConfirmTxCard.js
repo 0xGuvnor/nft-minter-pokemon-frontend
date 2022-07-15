@@ -51,7 +51,7 @@ const ConfirmTxCard = ({
     }, [isLoading]);
 
     return (
-        <div className="sm:w-[30rem]">
+        <div className="sm:w-[20rem] xl:w-[25rem]">
             <div className="mx-2 my-4 border shadow-xl rounded-box collapse-arrow md:collapse-open collapse border-base-200">
                 <input type="checkbox" className="peer" />
                 <h1 className="text-lg collapse-title bg-base-300 text-primary-content">

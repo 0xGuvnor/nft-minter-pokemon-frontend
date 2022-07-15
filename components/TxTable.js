@@ -87,7 +87,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                 (loadingActive || !tableActive ? (
                     <div>Loading...</div>
                 ) : (
-                    <table className="table table-compact shadow-xl rounded-box w-[90rem]">
+                    <table className="table table-compact shadow-xl rounded-box lg:w-[75rem] overflow-auto">
                         <thead>
                             <tr className="text-primary-content">
                                 <th className="sticky top-0">Transaction ID</th>
@@ -96,7 +96,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                                 <th className="sticky top-0">Value</th>
                                 <th className="sticky top-0">Data</th>
                                 <th className="sticky top-0">Description</th>
-                                <th className="sticky top-0">Num. Confirmations</th>
+                                <th className="sticky top-0">Confirmations</th>
                                 <th className="sticky top-0">Executable</th>
                             </tr>
                         </thead>
@@ -139,7 +139,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                 (loadingExecuted || !tableExecuted ? (
                     <div>Loading...</div>
                 ) : (
-                    <table className="table table-compact shadow-xl rounded-box w-[90rem]">
+                    <table className="table table-compact shadow-xl rounded-box w-[75rem]">
                         <thead>
                             <tr className="text-primary-content">
                                 <th className="sticky top-0">Transaction ID</th>
@@ -148,7 +148,7 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                                 <th className="sticky top-0">Value</th>
                                 <th className="sticky top-0">Data</th>
                                 <th className="sticky top-0">Description</th>
-                                <th className="sticky top-0">Num. Confirmations</th>
+                                <th className="sticky top-0">Confirmations</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -189,10 +189,9 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                 (loadingAll || !tableAll ? (
                     <div>Loading...</div>
                 ) : (
-                    <table className="table table-compact shadow-xl rounded-box w-[90rem]">
+                    <table className="table table-compact shadow-xl rounded-box w-[75rem]">
                         <thead>
                             <tr className="text-primary-content">
-                                <th className="sticky top-0"></th>
                                 <th className="sticky top-0">Transaction ID</th>
                                 <th className="sticky top-0">Transaction Type</th>
                                 <th className="sticky top-0">Sent By</th>
@@ -200,14 +199,13 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                                 <th className="sticky top-0">Value</th>
                                 <th className="sticky top-0">Data</th>
                                 <th className="sticky top-0">Description</th>
-                                <th className="sticky top-0">Num. Confirmations</th>
+                                <th className="sticky top-0">Confirmations</th>
                                 <th className="sticky top-0">Executed</th>
                             </tr>
                         </thead>
                         <tbody>
                             {tableAll.transactions.map((row) => (
                                 <tr className="hover" key={row.id}>
-                                    <td className="bg-accent">{row.id}</td>
                                     <td className="bg-accent">{row.aggTransaction.txId}</td>
                                     <td className="bg-accent">{row.transactionType}</td>
                                     <td className="bg-accent">

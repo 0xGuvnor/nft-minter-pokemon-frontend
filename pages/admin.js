@@ -107,7 +107,7 @@ const Admin = () => {
             <Header title={"Admin"} />
             <FadeIn>
                 <div className="flex flex-col items-center justify-center">
-                    <div className="sm:items-center md:items-start sm:justify-center sm:flex sm:flex-col md:flex-row md:mt-4">
+                    <div className="sm:items-center lg:items-start sm:justify-center sm:flex sm:flex-col lg:flex-row lg:mt-4">
                         <SubmitTxCard
                             pokedexAddress={pokedexAddress}
                             multisigAddress={multisigAddress}
