@@ -90,14 +90,14 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                     <table className="table table-compact shadow-xl rounded-box w-[90rem]">
                         <thead>
                             <tr className="text-primary-content">
-                                <th>Transaction ID</th>
-                                <th>Created By</th>
-                                <th>To</th>
-                                <th>Value</th>
-                                <th>Data</th>
-                                <th>Description</th>
-                                <th>Num. Confirmations</th>
-                                <th>Executable</th>
+                                <th className="sticky top-0">Transaction ID</th>
+                                <th className="sticky top-0">Created By</th>
+                                <th className="sticky top-0">To</th>
+                                <th className="sticky top-0">Value</th>
+                                <th className="sticky top-0">Data</th>
+                                <th className="sticky top-0">Description</th>
+                                <th className="sticky top-0">Num. Confirmations</th>
+                                <th className="sticky top-0">Executable</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,13 +142,13 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                     <table className="table table-compact shadow-xl rounded-box w-[90rem]">
                         <thead>
                             <tr className="text-primary-content">
-                                <th>Transaction ID</th>
-                                <th>Created By</th>
-                                <th>To</th>
-                                <th>Value</th>
-                                <th>Data</th>
-                                <th>Description</th>
-                                <th>Num. Confirmations</th>
+                                <th className="sticky top-0">Transaction ID</th>
+                                <th className="sticky top-0">Created By</th>
+                                <th className="sticky top-0">To</th>
+                                <th className="sticky top-0">Value</th>
+                                <th className="sticky top-0">Data</th>
+                                <th className="sticky top-0">Description</th>
+                                <th className="sticky top-0">Num. Confirmations</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -192,16 +192,16 @@ const TxTable = ({ multisigAddress, MultisigABI }) => {
                     <table className="table table-compact shadow-xl rounded-box w-[90rem]">
                         <thead>
                             <tr className="text-primary-content">
-                                <th></th>
-                                <th>Transaction ID</th>
-                                <th>Transaction Type</th>
-                                <th>Sent By</th>
-                                <th>To</th>
-                                <th>Value</th>
-                                <th>Data</th>
-                                <th>Description</th>
-                                <th>Num. Confirmations</th>
-                                <th>Executed</th>
+                                <th className="sticky top-0"></th>
+                                <th className="sticky top-0">Transaction ID</th>
+                                <th className="sticky top-0">Transaction Type</th>
+                                <th className="sticky top-0">Sent By</th>
+                                <th className="sticky top-0">To</th>
+                                <th className="sticky top-0">Value</th>
+                                <th className="sticky top-0">Data</th>
+                                <th className="sticky top-0">Description</th>
+                                <th className="sticky top-0">Num. Confirmations</th>
+                                <th className="sticky top-0">Executed</th>
                             </tr>
                         </thead>
                         <tbody>

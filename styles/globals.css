@@ -41,9 +41,3 @@ a {
 * {
     box-sizing: border-box;
 }
-
-th {
-    background: #e8e9f3;
-    position: sticky;
-    top: 0; /* Don't forget this, required for the stickiness */
-}
