@@ -1,12 +1,6 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import {
-    darkTheme,
-    getDefaultWallets,
-    lightTheme,
-    midnightTheme,
-    RainbowKitProvider,
-} from "@rainbow-me/rainbowkit";
+import { darkTheme, getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { infuraProvider } from "wagmi/providers/infura";
@@ -16,19 +10,19 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Footer from "../components/Footer";
 
 const client = new ApolloClient({
-    uri: "https://api.studio.thegraph.com/query/29304/pokedex/v0.1.10",
+    uri: "https://api.studio.thegraph.com/query/29304/pokedex---goerli/v0.1",
     cache: new InMemoryCache(),
 });
 
 const { chains, provider } = configureChains(
-    [chain.rinkeby],
+    [chain.goerli],
     [
         infuraProvider({
             infuraId: "bd37f1ca3d8c40ae8059fd11650b5022",
             priority: 0,
         }),
         alchemyProvider({
-            alchemyId: "SnvxwYIO7G_Ewxuzm1sWosvgGVQKKDS3",
+            alchemyId: "BCjazC46liXDSVoM-I0En7tv-bY_iITW",
             priority: 1,
         }),
         publicProvider({ priority: 2 }),
@@ -62,7 +56,6 @@ function MyApp({ Component, pageProps }) {
                     <Toaster
                         position="top-right"
                         toastOptions={{
-                            className: "",
                             duration: 7000,
                             style: { background: "#FDFCDC", color: "#2B2D42" },
                         }}

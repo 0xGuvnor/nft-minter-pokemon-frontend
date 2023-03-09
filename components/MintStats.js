@@ -54,7 +54,7 @@ const MintStats = () => {
             },
             {
                 ...pokedexContract,
-                functionName: "_tokenCounter",
+                functionName: "tokenCounter",
             },
         ],
     });

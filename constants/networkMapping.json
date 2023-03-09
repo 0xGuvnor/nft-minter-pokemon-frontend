@@ -2,5 +2,13 @@
     "4": {
         "Pokedex": ["0x43d627120D1c800e9574f3382f54B99102E7Bcc0"],
         "MultiSig": ["0x7A31444e9Da64b5f563e2747D57Cc70aF2552D72"]
+    },
+    "5": {
+        "Pokedex": ["0x23DE4Fc8d1Ee1365e8ab2eF80B5da01ed4634e39"],
+        "MultiSig": ["0xF2e2a632aE02eC0C2246BCBac6D44249791874fD"]
+    },
+    "31337": {
+        "Pokedex": ["0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9"],
+        "MultiSig": ["0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"]
     }
 }

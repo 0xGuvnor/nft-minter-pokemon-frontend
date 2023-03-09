@@ -60,7 +60,7 @@ const Footer = () => {
                         Get free testnet Ether
                     </a>
                     <a href={githubRepo} target="_blank" rel="noopener noreferrer">
-                        Built by 0xpaprhnds
+                        Built by 0xGuvnor
                     </a>
                 </div>
                 <div className={style.rightDetails}>Pokedéx Labs © 2022 </div>

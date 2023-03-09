@@ -25,7 +25,7 @@ const Admin = () => {
                         <h1 className="text-md">Transaction is being mined...</h1>
                         <p className="text-sm">Transaction hash:</p>
                         <a
-                            href={`https://rinkeby.etherscan.io/tx/${txHash}`}
+                            href={`https://goerli.etherscan.io/tx/${txHash}`}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -55,7 +55,7 @@ const Admin = () => {
                         <h1 className="text-md">Transaction completed!</h1>
                         <p className="text-sm">Transaction hash:</p>
                         <a
-                            href={`https://rinkeby.etherscan.io/tx/${txHash}`}
+                            href={`https://goerli.etherscan.io/tx/${txHash}`}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
