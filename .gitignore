@@ -30,4 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-/thegraph-indexing
+thegraph-multisig-indexing/
+thegraph-indexing
+thegraph-indexing
